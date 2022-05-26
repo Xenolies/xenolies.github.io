@@ -1,0 +1,548 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,MySQL,数据库" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/">
+
+
+
+  <title>
+MySQL学习笔记(3) - MySQL |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MySQL学习笔记(3)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-04-07 10:34:52">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-07T10:34:52+08:00">2022-04-07</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/MySQL/" itemprop="item" rel="index" title="In MySQL"><span itemprop="name">MySQL</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="约束"><a class="markdownIt-Anchor" href="#约束">#</a> 约束</h2>
+<h3 id="何为约束"><a class="markdownIt-Anchor" href="#何为约束">#</a> 何为约束？</h3>
+<p>对字段添加限制，称为约束。</p>
+<h3 id="约束的增加"><a class="markdownIt-Anchor" href="#约束的增加">#</a> 约束的增加</h3>
+<p>[collapse title=“约束关键字以及定义语句”] 主体部分，由于对于字段取值的各种不同的限定，因此，表中的约束也分为若干种，每种约束的关键字不同。约束的定义语句也不同。[/collapse]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">constraint 约束名  </span><br></pre></td></tr></table></figure>
+<p>创建表的时候，直接为字段定义约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(字段 数据类型 [约束定义语句])；</span><br></pre></td></tr></table></figure>
+<p>创建表后，修改字段定义增加约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add[constraint + 约束名]+约束的定义语句</span><br></pre></td></tr></table></figure>
+<h3 id="主键约束primary-key"><a class="markdownIt-Anchor" href="#主键约束primary-key">#</a> 主键约束 (PRIMARY KEY)</h3>
+<p>确定表中的标识列（主键字段不能为空，必须唯一）</p>
+<p>定义主键约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table DDD(</span><br><span class="line">DDDid char(10) primary key,</span><br><span class="line">DDDname varchar(10));//创建名为DDD的表。创建时，将DDDid约束为主键</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table DDD(</span><br><span class="line">DDDid char(10),</span><br><span class="line">DDDname varchar(10),</span><br><span class="line">primary key(DDDid));//创建表后，约束主键</span><br></pre></td></tr></table></figure>
+<p>为约束命名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table DDD(</span><br><span class="line">DDDid char(10),</span><br><span class="line">DDDname varchar(10),</span><br><span class="line">primary key(DDDid),</span><br><span class="line">constraint pk_id primary key(DDDid))；</span><br></pre></td></tr></table></figure>
+<p>组合主键</p>
+<p>表中主键字段需要多个字段组合起来充当，来满足主键约束的要求</p>
+<p>特征 ： 每个字段允许有重复值，但是组合在一起不许重复，而组合中每个字段都不可以取空值，</p>
+<p>格式 :</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[constraint 约束名]primary key[(字段名1，字段名2)];</span><br></pre></td></tr></table></figure>
+<p>注意：由于组合主键萨河及多个字段因此，组合主键只能定义表级约束，定义在表的最后或者被约束字段完成之后。</p>
+<h3 id="唯一约束unique"><a class="markdownIt-Anchor" href="#唯一约束unique">#</a> 唯一约束 (UNIQUE)</h3>
+<p>不可重复，可以有空值。</p>
+<p>格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--建表时添加约束</span><br><span class="line">CREATE TABLE 表名(</span><br><span class="line">字段名 int(10) UNIQUE);  --定义唯一约束</span><br><span class="line"></span><br><span class="line">--建表后添加约束</span><br><span class="line">ALTER TABLE 表名 ADD CONSTRAINT 唯一约束名 UNIQUE 字段名 ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unique index_name [字段名]; --索引命名</span><br></pre></td></tr></table></figure>
+<h3 id="非空约束not-null"><a class="markdownIt-Anchor" href="#非空约束not-null">#</a> 非空约束（NOT NULL）</h3>
+<p>不允许空值</p>
+<p>如果省略关键字，默认值为 null</p>
+<p>not null 只能放在字符后面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--建表时添加</span><br><span class="line">Create table Student(</span><br><span class="line">Name varchar(100) not null )； --定义非空约束</span><br><span class="line"></span><br><span class="line">--建表后添加</span><br><span class="line">ALTER TABLE student MODIFY Name varchar(100) NOT NULL ; --MODIFY 添加非空约束</span><br></pre></td></tr></table></figure>
+<h3 id="检查约束check"><a class="markdownIt-Anchor" href="#检查约束check">#</a> 检查约束（CHECK）</h3>
+<p>控制特定列中的值的完整性约束</p>
+<p>使用场景：</p>
+<p>订购册数 ：（1-100），出版时间等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">--建表时添加约束</span><br><span class="line">create table s2(</span><br><span class="line">学号 char(10) not null,</span><br><span class="line">性别 char(10) not null,</span><br><span class="line">check ( 学号 in ( select 学号 from student)));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--建表后添加约束</span><br><span class="line">ALTER TABLE s2 ADD CONSRAINT 检查约束名</span><br><span class="line"> CHECK ( 学号 in ( select 学号 from student));</span><br></pre></td></tr></table></figure>
+<h3 id="外键约束foreign-key"><a class="markdownIt-Anchor" href="#外键约束foreign-key">#</a> 外键约束 (FOREIGN KEY)</h3>
+<p>foreign key 定义在子表中。</p>
+<p>一个表中的某一个字段是参考另一个表中某个字段的取值，被称为外键约束。</p>
+<p>受约束的称为子表，约束子表的表称为父表。</p>
+<p>四个限制</p>
+<ol>
+<li>子表中的外键字段必须和父表中的参考字段的数据类型一致。</li>
+<li>父表中的参考字段必须被主键约束或者唯一键约束，才能约束子表中的外键约束</li>
+<li>父表中的主键值一旦被子表参照，那么这些值就不能随意修改和删除。</li>
+<li>子表的外键字段的值可以为空值，但是如果有值必须是在父表的参照列的取值范围内</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--建表时定义</span><br><span class="line">CREATE TABLE 表名(</span><br><span class="line">字段名  int(10),</span><br><span class="line">CONSTRAINT 外键约束名 </span><br><span class="line">FOREIGN KEY 字段名 </span><br><span class="line">REFERENCES 主表名[主表字段1,主表字段2] ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--建表后定义</span><br><span class="line">ALTER TABLE 表名 </span><br><span class="line">ADD CONSTRAINT 外键约束名 </span><br><span class="line">FOREIGN KEY 字段名 REFERENCES 主表名[主表字段1,主表字段2] ;</span><br></pre></td></tr></table></figure>
+<h3 id="默认约束default"><a class="markdownIt-Anchor" href="#默认约束default">#</a> 默认约束 (DEFAULT)</h3>
+<p>如果该行没有指定数据，那么系统将默认值赋给该列，如果我们不设置默认值，系统默认为 NULL。</p>
+<p>定义默认约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--建表时定义</span><br><span class="line">CREATE TABLE 表名(</span><br><span class="line">字段名 int(10) default 10);  --10为默认值</span><br><span class="line"></span><br><span class="line">--建表后定义</span><br><span class="line">ALTER TABLE 表名 ADD DEFAULT 10 FOR 字段名 ;</span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="ic i-tag"></i> 数据库</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:25" itemprop="dateModified" datetime="2022-05-26T17:10:25+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="MySQL学习笔记(3)">http://xenolies.github.io/2022/04/07/mysql学习笔记3/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm0fdw5cj20zk0m8hdt.jpg" title="JAVA学习笔记(8)(整理中)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(8)(整理中)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclx6phq6j20zk0m8e36.jpg" title="享受探索的乐趣(《马里奥3D大陆》关卡设计分析)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 杂项</span>
+  <h3>享受探索的乐趣(《马里奥3D大陆》关卡设计分析)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.</span> <span class="toc-text"> 约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.</span> <span class="toc-text"> 何为约束？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%A2%9E%E5%8A%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 约束的增加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9Fprimary-key"><span class="toc-number">1.3.</span> <span class="toc-text"> 主键约束 (PRIMARY KEY)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9Funique"><span class="toc-number">1.4.</span> <span class="toc-text"> 唯一约束 (UNIQUE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E7%BA%A6%E6%9D%9Fnot-null"><span class="toc-number">1.5.</span> <span class="toc-text"> 非空约束（NOT NULL）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%BA%A6%E6%9D%9Fcheck"><span class="toc-number">1.6.</span> <span class="toc-text"> 检查约束（CHECK）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9Fforeign-key"><span class="toc-number">1.7.</span> <span class="toc-text"> 外键约束 (FOREIGN KEY)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%BA%A6%E6%9D%9Fdefault"><span class="toc-number">1.8.</span> <span class="toc-text"> 默认约束 (DEFAULT)</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></li><li><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></li><li class="active"><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></li><li><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" rel="bookmark" title="MySQL学习笔记(4)（更新中）">MySQL学习笔记(4)（更新中）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" title="JAVA爬虫项目学习笔记（Maven框架）">JAVA爬虫项目学习笔记（Maven框架）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%AB%99%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" title="In 网站那些事儿">网站那些事儿</a>
+</div>
+
+    <span><a href="/2022/02/08/wordpress%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%87%AA%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/" title="WordPress一些个人自用插件推荐">WordPress一些个人自用插件推荐</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/" title="我的一些关卡设计心得">我的一些关卡设计心得</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%AB%99%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" title="In 网站那些事儿">网站那些事儿</a>
+</div>
+
+    <span><a href="/2022/02/06/sakurairo%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E9%A1%B5%E5%B0%BE%E6%98%BE%E7%A4%BA%E7%BD%91%E7%AB%99%E7%B4%AF%E8%AE%A1%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" title="Sakurairo主题设置页尾显示“网站累计运行时间”">Sakurairo主题设置页尾显示“网站累计运行时间”</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/04/07/mysql学习笔记3/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

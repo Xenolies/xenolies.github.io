@@ -1,0 +1,786 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,JAVA,编程" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">
+
+
+
+  <title>
+JAVA学习笔记(1) - JAVA |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">JAVA学习笔记(1)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-03-04 10:57:59">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-04T10:57:59+08:00">2022-03-04</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/JAVA/" itemprop="item" rel="index" title="In JAVA"><span itemprop="name">JAVA</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="什么是java"><a class="markdownIt-Anchor" href="#什么是java">#</a> 什么是 JAVA</h2>
+<p>什么是 JAVA？不就是杯<span class="exturl" data-url="aHR0cHM6Ly9sb2dvcy1tYXJxdWVzLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMS8wMy9KYXZhLUxvZ28tMTk5Ni5wbmc=">咖啡</span>吗 (○｀ 3′○)( 谁说的，有可能还是个<span class="exturl" data-url="aHR0cHM6Ly96aC5tb2VnaXJsLm9yZy5jbi9KYXZhJUU1JUE4JTk4">妹子</span>╰(￣ω￣ｏ)（（（</p>
+<p>java 是纯面向对象编程的语言。亲身经历：学 JAVA 无法解决单身问题</p>
+<h3 id="如何理解面向对象编程"><a class="markdownIt-Anchor" href="#如何理解面向对象编程">#</a> 如何理解面向对象编程？</h3>
+<p>以下转自博客园的这个<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaWRlYWwtMjAvcC8xMTA1MDE0Ni5odG1s">帖子</span>。</p>
+<p>例如我们设计一个桌球游戏（略过开球，只考虑中间过程）</p>
+<p><strong>A：面向过程方式思考：</strong></p>
+<p>把下述的步骤<strong>通过函数一步一步实现</strong>，这个需求就完成了。（只为演示概念，不细究逻辑问题）。</p>
+<p>① palyer1 击球 —— ② 实现画面击球效果 —— ③ 判断是否进球及有效 —— ④ palyer2 击球</p>
+<p>⑤ 实现画面击球效果 —— ⑥ 判断是否进球及有效 —— ⑦ 返回步骤 1—— ⑧ 输出游戏结果</p>
+<p><strong>B：面向对象方式思考：</strong></p>
+<p>经过观察我们可以看到，其实在上面的流程中存在很多<strong>共性</strong>的地方，所以我们将这些共性部分全集中起来，做成一个<strong>通用的结构</strong></p>
+<ol>
+<li><strong>玩家系统</strong>：包括 palyer1 和 palyer2</li>
+<li><strong>击球效果系统</strong>：负责展示给用户游戏时的画面</li>
+<li><strong>规则系统</strong>：判断是否犯规，输赢等</li>
+</ol>
+<p><img data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f7d3745f0884b66ad204a412533c5a3~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>我个人结合博客园帖子的理解:</p>
+<p>面向对象更像是做一个锤子，一个普遍性工具，一个实现循环显示数字的代码可以到多个地方应用，比如显示数字，让小灯循环亮起。需要这个功能调用这个类就可以了，方便快捷。但是缺点显而易见的，锤子不可能适合砸所有东西，这样面向对象也是，需要对应的库来实现。</p>
+<p>面向过程更像是定制化，效率高，但是添加新东西，需要写代码，相当于造一个专用的扳手。</p>
+<h3 id="向世界问好"><a class="markdownIt-Anchor" href="#向世界问好">#</a> 向世界问好</h3>
+<h4 id="代码"><a class="markdownIt-Anchor" href="#代码">#</a> 代码</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld&#123;  //JAVA系统的类，文件名必须和类名相同</span><br><span class="line">public static void main(String[]args)&#123;   //定义main方法(函数)，一个 java 程序运行必须而且有且仅有一个 main 方法。JAVA程序开始,String(str)表明数据类型,args表示数组</span><br><span class="line">System.out.println(&quot;hello,world&quot;); //显示HelloWorld</span><br><span class="line">&#125;  //注意：方法必须用大括号括起来</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意: Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的</p>
+<h4 id="编译java"><a class="markdownIt-Anchor" href="#编译java">#</a> 编译 JAVA</h4>
+<p>win+R 进入命令行，cd 到 Java 文件所在目录，输入 javac + 文件名 (带扩展名) 编译。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/%E7%BC%96%E8%AF%91java.webp" alt=""></p>
+<h4 id="运行"><a class="markdownIt-Anchor" href="#运行">#</a> 运行</h4>
+<p>编译完成后，输入 java + 文件名（不带后缀），运行</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/RUNJAVA.webp" alt=""></p>
+<h4 id="可能出现的问题"><a class="markdownIt-Anchor" href="#可能出现的问题">#</a> 可能出现的问题</h4>
+<p>有的时候编译完成，运行，会出现这样的问题，那是编码方式不对。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/java%E4%B9%B1%E7%A0%81.webp" alt=""></p>
+<p>就需要修改编码格式</p>
+<p>另存为 ANSI 格式即可正常运行</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/JAVA%E4%BF%AE%E6%94%B9%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.webp" alt=""></p>
+<h3 id="安装eclipse"><a class="markdownIt-Anchor" href="#安装eclipse">#</a> 安装 Eclipse</h3>
+<p>任何东西只要娘化就会非常有趣，比如<span class="exturl" data-url="aHR0cHM6Ly9temgubW9lZ2lybC5vcmcuY24vRWNsaXBzZSVFNSVBOCU5OA=="> Eclipse 娘</span> 所以这才是程序员真正的快乐吗？</p>
+<p>具体的安装可以参考这个教程：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC80MDc5NDgxMjU=">Eclipse 安装使用教程！</span></p>
+<h2 id="java基本语法"><a class="markdownIt-Anchor" href="#java基本语法">#</a> JAVA 基本语法</h2>
+<h3 id="分隔符"><a class="markdownIt-Anchor" href="#分隔符">#</a> 分隔符</h3>
+<p>分号 (&quot;；&quot;)（英文）：语句结束标记，for 循环看分割不同成分 。</p>
+<p>圆点（“.”）：用于分割 “类” 中的函数，可以理解为 Python 里的 os.listdir 这段里圆点的作用 (调用 OS 模块里面的 listdir 函数)</p>
+<p>空格（&quot; &quot;）：分割源代码里的不同部分，例如 int a; int b;</p>
+<p>花括号（“}”）：用于限定某一部分的范围，成对使用</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Text &#123;   </span><br><span class="line">piblic static void main (String[]args)&#123;</span><br><span class="line">      System.out.println(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="标识符"><a class="markdownIt-Anchor" href="#标识符">#</a> 标识符</h3>
+<p>起到表示作用的符号。(用来给类、对象、方法、变量、接口和自定义数据类型命名的。)</p>
+<p>命名规则：由数字，字母和下划线（_），美元符号（$）或人民币符号（￥）组成。</p>
+<p>例如:</p>
+<p>myName，My_name，Points，$points,_sys_ta，OK，_23b，_3_</p>
+<p>非法标识符:</p>
+<p>#name，25name，class，&amp;time，if</p>
+<h3 id="java关键字"><a class="markdownIt-Anchor" href="#java关键字">#</a> JAVA 关键字</h3>
+<p>Java 关键字类别</p>
+<p>Java 关键字</p>
+<p>关键字含义</p>
+<p>访问控制</p>
+<p>private</p>
+<p>一种访问控制方式：私用模式，访问控制修饰符，可以应用于类、方法或字段（在类中声明的变量）</p>
+<p>访问控制</p>
+<p>protected</p>
+<p>一种访问控制方式：保护模式，可以应用于类、方法或字段（在类中声明的变量）的访问控制修饰符</p>
+<p>访问控制</p>
+<p>public</p>
+<p>一种访问控制方式：共用模式，可以应用于类、方法或字段（在类中声明的变量）的访问控制修饰符。</p>
+<p>类、方法和变量修饰符</p>
+<p>abstract</p>
+<p>表明类或者成员方法具有抽象属性，用于修改类或方法</p>
+<p>类、方法和变量修饰符</p>
+<p>class</p>
+<p>声明一个类，用来声明新的 Java 类</p>
+<p>类、方法和变量修饰符</p>
+<p>extends</p>
+<p>表明一个类型是另一个类型的子类型。对于类，可以是另一个类或者抽象类；对于接口，可以是另一个接口</p>
+<p>类、方法和变量修饰符</p>
+<p>final</p>
+<p>用来说明最终属性，表明一个类不能派生出子类，或者成员方法不能被覆盖，或者成员域的值不能被改变，用来定义常量</p>
+<p>类、方法和变量修饰符</p>
+<p>implements</p>
+<p>表明一个类实现了给定的接口</p>
+<p>类、方法和变量修饰符</p>
+<p>interface</p>
+<p>接口</p>
+<p>类、方法和变量修饰符</p>
+<p>native</p>
+<p>用来声明一个方法是由与计算机相关的语言（如 C/C++/FORTRAN 语言）实现的</p>
+<p>类、方法和变量修饰符</p>
+<p>new</p>
+<p>用来创建新实例对象</p>
+<p>类、方法和变量修饰符</p>
+<p>static</p>
+<p>表明具有静态属性</p>
+<p>类、方法和变量修饰符</p>
+<p>strictfp</p>
+<p>用来声明 FP_strict（单精度或双精度浮点数）表达式遵循 IEEE 754 算术规范</p>
+<p>类、方法和变量修饰符</p>
+<p>synchronized</p>
+<p>表明一段代码需要同步执行</p>
+<p>类、方法和变量修饰符</p>
+<p>transient</p>
+<p>声明不用序列化的成员域</p>
+<p>类、方法和变量修饰符</p>
+<p>volatile</p>
+<p>表明两个或者多个变量必须同步地发生变化</p>
+<p>程序控制</p>
+<p>break</p>
+<p>提前跳出一个块</p>
+<p>程序控制</p>
+<p>continue</p>
+<p>回到一个块的开始处</p>
+<p>程序控制</p>
+<p>return</p>
+<p>从成员方法中返回数据</p>
+<p>程序控制</p>
+<p>do</p>
+<p>用在 do-while 循环结构中</p>
+<p>程序控制</p>
+<p>while</p>
+<p>用在循环结构中</p>
+<p>程序控制</p>
+<p>if</p>
+<p>条件语句的引导词</p>
+<p>程序控制</p>
+<p>else</p>
+<p>用在条件语句中，表明当条件不成立时的分支</p>
+<p>程序控制</p>
+<p>for</p>
+<p>一种循环结构的引导词</p>
+<p>程序控制</p>
+<p>instanceof</p>
+<p>用来测试一个对象是否是指定类型的实例对象</p>
+<p>程序控制</p>
+<p>switch</p>
+<p>分支语句结构的引导词</p>
+<p>程序控制</p>
+<p>case</p>
+<p>用在 switch 语句之中，表示其中的一个分支</p>
+<p>程序控制</p>
+<p>default</p>
+<p>默认，例如：用在 switch 语句中，表明一个默认的分支。Java8 中也作用于声明接口函数的默认实现</p>
+<p>错误处理</p>
+<p>try</p>
+<p>尝试一个可能抛出异常的程序块</p>
+<p>错误处理</p>
+<p>catch</p>
+<p>用在异常处理中，用来捕捉异常</p>
+<p>错误处理</p>
+<p>throw</p>
+<p>抛出一个异常</p>
+<p>错误处理</p>
+<p>throws</p>
+<p>声明在当前定义的成员方法中所有需要抛出的异常</p>
+<p>包相关</p>
+<p>import</p>
+<p>表明要访问指定的类或包</p>
+<p>包相关</p>
+<p>package</p>
+<p>包</p>
+<p>基本类型</p>
+<p>boolean</p>
+<p>基本数据类型之一，声明布尔类型的关键字</p>
+<p>基本类型</p>
+<p>byte</p>
+<p>基本数据类型之一，字节类型</p>
+<p>基本类型</p>
+<p>char</p>
+<p>基本数据类型之一，字符类型</p>
+<p>基本类型</p>
+<p>double</p>
+<p>基本数据类型之一，双精度浮点数类型</p>
+<p>基本类型</p>
+<p>float</p>
+<p>基本数据类型之一，单精度浮点数类型</p>
+<p>基本类型</p>
+<p>int</p>
+<p>基本数据类型之一，整数类型</p>
+<p>基本类型</p>
+<p>long</p>
+<p>基本数据类型之一，长整数类型</p>
+<p>基本类型</p>
+<p>short</p>
+<p>基本数据类型之一，短整数类型</p>
+<p>基本类型</p>
+<p>null</p>
+<p>空，表示无值，不能将 null 赋给原始类型（byte、short、int、long、char、float、double、boolean）变量</p>
+<p>基本类型</p>
+<p>true</p>
+<p>真，boolean 变量的两个合法值中的一个</p>
+<p>基本类型</p>
+<p>false</p>
+<p>假，boolean 变量的两个合法值之一</p>
+<p>变量引用</p>
+<p>super</p>
+<p>表明当前对象的父类型的引用或者父类型的构造方法</p>
+<p>变量引用</p>
+<p>this</p>
+<p>指向当前实例对象的引用，用于引用当前实例</p>
+<p>变量引用</p>
+<p>void</p>
+<p>声明当前成员方法没有返回值，void 可以用作方法的返回类型，以指示该方法不返回值</p>
+<p>保留字</p>
+<p>goto</p>
+<p>保留关键字，没有具体含义</p>
+<p>保留字</p>
+<p>const</p>
+<p>保留关键字，没有具体含义，是一个类型修饰符，使用 const 声明的对象不能更新</p>
+<p>JAVA 关键字</p>
+<p>上表转自此<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9hcnRpY2xlLzc1MzY5OQ==">帖子</span></p>
+<h3 id="注释"><a class="markdownIt-Anchor" href="#注释">#</a> 注释</h3>
+<p>单行注释</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class Text&#123; //这是单行注释</span><br></pre></td></tr></table></figure>
+<p>多行注释</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Text&#123;</span><br><span class="line">    public static viod main (String[]args)&#123;/*这是多行注释</span><br><span class="line">这是多行注释*/</span><br><span class="line">        System.out.println(&quot;hello,world&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>文档注释</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">这是文档注释</span><br><span class="line">这是文档注释</span><br><span class="line">*/</span><br><span class="line">public class HelloWorld&#123;  </span><br><span class="line">public static void main(String[]args)&#123;  </span><br><span class="line">System.out.println(&quot;hello,world&quot;); </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java数据类型"><a class="markdownIt-Anchor" href="#java数据类型">#</a> JAVA 数据类型</h2>
+<h3 id="基本数据类型"><a class="markdownIt-Anchor" href="#基本数据类型">#</a> 基本数据类型</h3>
+<h4 id="整型"><a class="markdownIt-Anchor" href="#整型">#</a> 整型</h4>
+<p>byte , short , int , log</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//整型</span><br><span class="line">int a = 1 ; </span><br><span class="line">byte b = 2 ; // 最大表示到127</span><br><span class="line">short c = 3 ;</span><br><span class="line">long d = 4 ;</span><br></pre></td></tr></table></figure>
+<h4 id="浮点型"><a class="markdownIt-Anchor" href="#浮点型">#</a> 浮点型</h4>
+<p>float , double</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//浮点型</span><br><span class="line">double e = 0.1; //双精度浮点型</span><br><span class="line">float f = 0.2f ; //单精度浮点型</span><br><span class="line"></span><br><span class="line">double e1 = 0.1d;</span><br></pre></td></tr></table></figure>
+<p>[collapse title=“在 JAVA 中，如果定义 float 类型，需要后面加个 f，否则会默认转化为 double 类型”] 或者直接定义为 double 也可以 [/collapse]</p>
+<p>定义 double 可以加 d, 例如 double a = 0.455d</p>
+<h4 id="字符型"><a class="markdownIt-Anchor" href="#字符型">#</a> 字符型</h4>
+<p>char 型，<strong>单个符号</strong>，需要用<strong>单引号</strong>引起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//字符型</span><br><span class="line">char c1 = &#x27;R&#x27;;</span><br><span class="line">char c2 = &#x27;T&#x27;;</span><br></pre></td></tr></table></figure>
+<p>如果使用字符串 String，不会报错，但是不会输出 (<strong>String 数据类型是引用数据类型)</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String A = &quot;String&quot; //字符串,记得用双引号引起来</span><br></pre></td></tr></table></figure>
+<p>在 JAVA 中，字符可以定义成为字符串，整体的字符有些可以定义成字符，例如换行符 “\n”</p>
+<h4 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型">#</a> 布尔类型</h4>
+<p>true 和 false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boolean b1 = true ;</span><br><span class="line">boolean b2 = false ;</span><br></pre></td></tr></table></figure>
+<h4 id="代码表示"><a class="markdownIt-Anchor" href="#代码表示">#</a> 代码表示</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//整型</span><br><span class="line">int a = 1 ;</span><br><span class="line">byte b = 2 ;</span><br><span class="line">short c = 3 ;</span><br><span class="line">long d = 4 ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//浮点型</span><br><span class="line">double e = 0.1;</span><br><span class="line">float f = 0.2f ;</span><br><span class="line">//在JAVA中，如果定义float类型，需要后面加个f，否则会默认转化为double类型</span><br><span class="line"></span><br><span class="line">//字符型</span><br><span class="line">char g = &#x27;G&#x27;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//布尔型</span><br><span class="line">boolean h = true;</span><br><span class="line"></span><br><span class="line">//字符串</span><br><span class="line">String i = &quot;Hedio_Kojima&quot; </span><br></pre></td></tr></table></figure>
+<h3 id="引用数据类型"><a class="markdownIt-Anchor" href="#引用数据类型">#</a> 引用数据类型</h3>
+<h4 id="类对象"><a class="markdownIt-Anchor" href="#类对象">#</a> 类（对象）</h4>
+<h4 id="接口"><a class="markdownIt-Anchor" href="#接口">#</a> 接口</h4>
+<h4 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h4>
+<h2 id="常量和变量"><a class="markdownIt-Anchor" href="#常量和变量">#</a> 常量和变量</h2>
+<h3 id="常量"><a class="markdownIt-Anchor" href="#常量">#</a> 常量</h3>
+<p>常量值又称为字面常量，它是通过数据直接表示的，因此有很多种数据类型，像整型和字符串型等。</p>
+<h4 id="整型常量"><a class="markdownIt-Anchor" href="#整型常量">#</a> 整型常量</h4>
+<p>整型常量是整数类型的数据。它的表现有四种：</p>
+<p>二进制，八进制，十进制，十六进制</p>
+<p>例如:</p>
+<p>二进制</p>
+<p>1111</p>
+<p>八进制</p>
+<p>17</p>
+<p>十进制</p>
+<p>15</p>
+<p>十六进制</p>
+<p>f</p>
+<p>整型常量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int i1 = 012 ; //八进制常量，以0开始</span><br><span class="line">int i2 = 0x12 ; //十六进制常量，以0x开始</span><br><span class="line">int i3 = 10 ; // 十进制常量，以0开始</span><br></pre></td></tr></table></figure>
+<h4 id="浮点数常量"><a class="markdownIt-Anchor" href="#浮点数常量">#</a> 浮点数常量</h4>
+<p>浮点数常量就是在数学中用到的小数。分为单浮点 (float) 和双浮点 (double)。</p>
+<p>例如</p>
+<p>0.2233f</p>
+<p>0.2333d</p>
+<h4 id="布尔常量"><a class="markdownIt-Anchor" href="#布尔常量">#</a> 布尔常量</h4>
+<p>只有两个值， ture (真) 和 false (假)</p>
+<h4 id="字符常量"><a class="markdownIt-Anchor" href="#字符常量">#</a> 字符常量</h4>
+<p>字符型常量值是用<strong>单引号</strong>引起来的一个字符，例如 ‘e’ , ‘a’ , ‘E’。</p>
+<p>与 Python 不同的是，JAVA 里的单引号和双引号不能混用，双引号是用来表示字符串的</p>
+<h3 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h3>
+<h4 id="变量的声明"><a class="markdownIt-Anchor" href="#变量的声明">#</a> 变量的声明</h4>
+<h5 id="格式"><a class="markdownIt-Anchor" href="#格式">#</a> 格式</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//数据类型 变量名 = 初值</span><br><span class="line">int a = 234</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<p>int 是数据类型，</p>
+<p>a 是变量名，</p>
+<p>234　为　初值</p>
+<h4 id="作用域"><a class="markdownIt-Anchor" href="#作用域">#</a> 作用域</h4>
+<p>也称变量的作用范围，即一个变量在多大的范围内可以使用。</p>
+<h5 id="类变量"><a class="markdownIt-Anchor" href="#类变量">#</a> 类变量</h5>
+<p>独立于方法之外的变量，用 static 修饰。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class LBL &#123;</span><br><span class="line">    static int p=100;  //类变量</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    System.out.println(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="实例变量"><a class="markdownIt-Anchor" href="#实例变量">#</a> 实例变量</h5>
+<p>独立于方法之外的变量，不过没有 static 修饰。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class LBL &#123;  </span><br><span class="line">     String p=&quot;hello world&quot;;  // 实例变量    </span><br><span class="line">     public static void main(String[] args) &#123;</span><br><span class="line">    System.out.println(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="局部变量"><a class="markdownIt-Anchor" href="#局部变量">#</a> 局部变量</h5>
+<p>类的方法中的变量.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class LBL &#123;      </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    int p = 123 ;</span><br><span class="line">    System.out.println(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="相对关系"><a class="markdownIt-Anchor" href="#相对关系">#</a> 相对关系</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Text&#123;</span><br><span class="line">    static int p1=0;    // 类变量</span><br><span class="line"></span><br><span class="line">    String p2=&quot;hello world&quot;;  // 实例变量</span><br><span class="line"> </span><br><span class="line">   public void method()&#123;</span><br><span class="line"></span><br><span class="line">        int p3 =0;  // 局部变量</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/JAVA/" rel="tag"><i class="ic i-tag"></i> JAVA</a>
+          <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 编程</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:25" itemprop="dateModified" datetime="2022-05-26T17:10:25+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="JAVA学习笔记(1)">http://xenolies.github.io/2022/03/04/java学习笔记1/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitht3xtj20zk0m8k5v.jpg" title="ESP32制作小电视学习笔记">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 单片机</span>
+  <h3>ESP32制作小电视学习笔记</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeybxm1pj20zk0m8niv.jpg" title="MySQL学习笔记(1)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> MySQL</span>
+  <h3>MySQL学习笔记(1)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjava"><span class="toc-number">1.</span> <span class="toc-text"> 什么是 JAVA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 如何理解面向对象编程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E4%B8%96%E7%95%8C%E9%97%AE%E5%A5%BD"><span class="toc-number">1.2.</span> <span class="toc-text"> 向世界问好</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91java"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 编译 JAVA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 可能出现的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85eclipse"><span class="toc-number">1.3.</span> <span class="toc-text"> 安装 Eclipse</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> JAVA 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text"> 分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text"> 标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.3.</span> <span class="toc-text"> JAVA 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.4.</span> <span class="toc-text"> 注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text"> JAVA 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text"> 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 浮点型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 字符型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 布尔类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.1.5.</span> <span class="toc-text"> 代码表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> 引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 类（对象）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 数组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text"> 常量和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.</span> <span class="toc-text"> 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 整型常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 浮点数常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 布尔常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 字符常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 变量的声明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.2.1.1.</span> <span class="toc-text"> 格式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">4.2.2.1.</span> <span class="toc-text"> 类变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="toc-number">4.2.2.2.</span> <span class="toc-text"> 实例变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">4.2.2.3.</span> <span class="toc-text"> 局部变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%85%B3%E7%B3%BB"><span class="toc-number">4.2.2.4.</span> <span class="toc-text"> 相对关系</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></li><li><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></li><li><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="bookmark" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></li><li><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></li><li><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></li><li><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" rel="bookmark" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></li><li><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="JAVA学习笔记7">JAVA学习笔记7</a></li><li><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="bookmark" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></li><li><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="bookmark" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></li><li><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="bookmark" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></li><li><a href="/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" rel="bookmark" title="JAVA爬虫项目学习笔记（Maven框架）">JAVA爬虫项目学习笔记（Maven框架）</a></li><li><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="bookmark" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Python/" title="In Python">Python</a>
+</div>
+
+    <span><a href="/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" title="Pyinstaller的简单安装使用">Pyinstaller的简单安装使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/08/%E5%90%8D%E5%AE%B6%E6%9D%82%E6%96%87%E3%80%8A%E9%9D%92%E5%B9%B4%E4%BA%BA%E7%9A%84%E9%98%85%E8%AF%BB%E3%80%8B/" title="名家杂文《青年人的阅读》">名家杂文《青年人的阅读》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%AB%99%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" title="In 网站那些事儿">网站那些事儿</a>
+</div>
+
+    <span><a href="/2022/02/06/sakurairo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%88%86%E7%B1%BB404%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Sakurairo主题的“分类”404报错的解决方法">Sakurairo主题的“分类”404报错的解决方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" title="In 单片机">单片机</a>
+</div>
+
+    <span><a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ESP32制作小电视学习笔记">ESP32制作小电视学习笔记</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/04/java学习笔记1/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

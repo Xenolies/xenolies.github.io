@@ -1,0 +1,569 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,JAVA" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/">
+
+
+
+  <title>
+JAVA学习笔记(4) - JAVA |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">JAVA学习笔记(4)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-03-20 16:17:53">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-20T16:17:53+08:00">2022-03-20</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/JAVA/" itemprop="item" rel="index" title="In JAVA"><span itemprop="name">JAVA</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="流程控制语句"><a class="markdownIt-Anchor" href="#流程控制语句">#</a> 流程控制语句</h2>
+<h3 id="顺序结构"><a class="markdownIt-Anchor" href="#顺序结构">#</a> 顺序结构</h3>
+<ul>
+<li>
+<p>java 的基本结构就是顺序结构，除非特别指明，否则就按照顺序一句一句执行</p>
+</li>
+<li>
+<p>顺序结构是最简单的算法结构</p>
+</li>
+<li>
+<p>语句与语句之间，框与框之间是按照从上到下的顺序进行的，它是由若干个依次执行的处理步骤组成的，它是任何一个算法都离不开的一种基本算法结构。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Demo &#123;  //创建demo类</span><br><span class="line">    public static void main(String[] args)&#123;  //main方法</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;1&quot;);  //顺序结构将从上往下依次进行</span><br><span class="line">        System.out.println(&quot;2&quot;);</span><br><span class="line">        System.out.println(&quot;3&quot;);</span><br><span class="line">        System.out.println(&quot;4&quot;);</span><br><span class="line">        System.out.println(&quot;5&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="分支语句"><a class="markdownIt-Anchor" href="#分支语句">#</a> 分支语句</h3>
+<h4 id="if语句"><a class="markdownIt-Anchor" href="#if语句">#</a> if 语句</h4>
+<p>一个 if 语句包含一个布尔表达式和一条或多条语句。</p>
+<h5 id="单if-语句"><a class="markdownIt-Anchor" href="#单if-语句">#</a> 单 if 语句</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">if (logic expression)&#123;</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int a = 10 ;</span><br><span class="line"></span><br><span class="line">        if (a &gt; 1)  &#123;  //单选择if</span><br><span class="line">            System.out.println(&quot;a &gt; 1 &quot;) ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="if-else语句"><a class="markdownIt-Anchor" href="#if-else语句">#</a> if - else 语句</h5>
+<p>if 和 else 之间不能有任何其他语句 (else if 这样的选择语句除外)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">if (logic expression)&#123;  // logic expression为布尔类型</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">int a = 10 ;</span><br><span class="line">int b = 5 ;</span><br><span class="line">boolean c = true ;</span><br><span class="line">boolean d = false ;</span><br><span class="line"></span><br><span class="line">if (a &lt; b) &#123;  //if 语句分支</span><br><span class="line">System.out.print(c);</span><br><span class="line">&#125;</span><br><span class="line">else &#123; // else 语句分支</span><br><span class="line">System.out.println(d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="if-else-if-else-语句"><a class="markdownIt-Anchor" href="#if-else-if-else-语句">#</a> if - else if - else 语句</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">if (logic expression)&#123;  // logic expression为布尔类型</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">else if (logic expression)&#123;</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">statments</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">int a = 10 ;</span><br><span class="line">int b = 5 ;</span><br><span class="line">int c = 10 ;</span><br><span class="line">boolean d = true ;</span><br><span class="line">boolean e = false ;</span><br><span class="line"></span><br><span class="line">if (a == b) &#123;  // if分支</span><br><span class="line">System.out.print(d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">else if (a == c ) &#123; // else if 分支</span><br><span class="line">System.out.println(&quot;a == 10&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">else &#123;  // else 分支</span><br><span class="line">System.out.println(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="嵌套if语句"><a class="markdownIt-Anchor" href="#嵌套if语句">#</a> 嵌套 if 语句</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">if (logic expression)&#123;</span><br><span class="line">    if (logic expression)&#123;</span><br><span class="line">        statments</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int a = 9 ;</span><br><span class="line">        if (a == 9)&#123; // if语句A</span><br><span class="line">            if (a != 10)&#123;  // if语句B`</span><br><span class="line">                System.out.println(&quot;Ture&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="switch语句"><a class="markdownIt-Anchor" href="#switch语句">#</a> switch 语句</h4>
+<p>switch case 语句判断一个变量与一系列值中某个值是否相等，每个值称为一个分支。</p>
+<p>switch 语句中的变量类型可以是： byte、short、int 或者 char。 switch 支持字符串 String 类型了，同时 case 标签必须为字符串常量或字面量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">switch (expression)&#123;</span><br><span class="line">    case value1 :</span><br><span class="line">    statments</span><br><span class="line">    break;//用于控制单个选项输出,否则就会输出剩下的语句</span><br><span class="line"></span><br><span class="line">    case value2 :</span><br><span class="line">    statments</span><br><span class="line">    break;</span><br><span class="line"></span><br><span class="line">   default:&#123;  //前面case都没有执行的话运行</span><br><span class="line">   statments</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        int a = 9 ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        switch (a)&#123;  //switch语句</span><br><span class="line"></span><br><span class="line">            case 8 :  //case a</span><br><span class="line">                System.out.println(&quot;a = 8&quot;);</span><br><span class="line">                break;//用于控制单个选项输出</span><br><span class="line"></span><br><span class="line">            case 9 :  //case b</span><br><span class="line">                System.out.println(&quot;a = 9&quot;);</span><br><span class="line">                break;</span><br><span class="line"></span><br><span class="line">            default :&#123;</span><br><span class="line">                System.out.println(&quot;a = default&quot;);</span><br><span class="line">            &#125; </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="循环语句"><a class="markdownIt-Anchor" href="#循环语句">#</a> 循环语句</h3>
+<h4 id="while循环语句"><a class="markdownIt-Anchor" href="#while循环语句">#</a> while 循环语句</h4>
+<p>while 循环特点：先判断是否满足循环条件，然后进入循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">while (条件) &#123;</span><br><span class="line"></span><br><span class="line">//语句</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a = 0 ;</span><br><span class="line"></span><br><span class="line">         while (a &lt; 10) &#123;  //while循环，判断变量a 小于零，执行循环</span><br><span class="line">             a++;</span><br><span class="line">             System.out.println(a);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="while循环练习"><a class="markdownIt-Anchor" href="#while循环练习">#</a> while 循环练习</h5>
+<p>100 以内的奇数和以及偶数和</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        int x = 0 ;</span><br><span class="line">        int x1 = 0 ;</span><br><span class="line">        int y1 = 0 ;</span><br><span class="line"></span><br><span class="line">        while (x&lt;100)&#123;</span><br><span class="line">            if (x % 2 == 0) &#123; //偶数</span><br><span class="line">                x1 = x1 + x ;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                y1 = y1 + x ; //奇数</span><br><span class="line">            &#125;</span><br><span class="line">            x++ ;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;偶数和&quot; + x1);</span><br><span class="line">        System.out.println(&quot;奇数和&quot; + y1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="do-while循环语句"><a class="markdownIt-Anchor" href="#do-while循环语句">#</a> do - while 循环语句</h4>
+<p>do - while 循环特点 ：至少循环一次，先执行后判断。先 do 再 while</p>
+<p>至少循环一次是 do - while 语句和 while 语句主要的差别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> do&#123;</span><br><span class="line"> //代码</span><br><span class="line"> &#125;while(不布尔表达式);</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a = 0 ;</span><br><span class="line">        int b = 0 ;</span><br><span class="line"></span><br><span class="line">        do&#123;</span><br><span class="line">            ++a ;  //是do - while语句，a将输出10</span><br><span class="line">        &#125;while (a&lt;10);</span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        while(a&lt;0); //while语句，直接跳出循环，b为0</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(b);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="do-while-循环练习"><a class="markdownIt-Anchor" href="#do-while-循环练习">#</a> do-while 循环练习</h5>
+<p>100 以内的奇数和以及偶数和</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int x = 0;</span><br><span class="line">        int x1 = 0;</span><br><span class="line">        int y1 = 0;</span><br><span class="line"></span><br><span class="line">        do &#123;</span><br><span class="line">            if (x % 2 == 0) &#123;</span><br><span class="line">                x1 = x1 + x;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                y1 = y1 + x;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            x++;</span><br><span class="line">        &#125;while (x &lt; 100) ; //)~100</span><br><span class="line"></span><br><span class="line">            System.out.println(&quot;偶数和&quot; + x1);</span><br><span class="line">            System.out.println(&quot;奇数和&quot; + y1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="for循环语句"><a class="markdownIt-Anchor" href="#for循环语句">#</a> for 循环语句</h4>
+<p>格式</p>
+<p>for (初始化，布尔表达式，迭代){</p>
+<p>代码语句</p>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">for (初始化，布尔表达式,迭代)&#123;</span><br><span class="line">//代码语句</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for ( int a = 0 ; a&lt;10 ; a++)&#123;  //for (初始化,布尔表达式,迭代)</span><br><span class="line">            System.out.println(a);  //输出a</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>多变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    </span><br><span class="line">    for(int a=0,b=0,c=0;a&lt;10 &amp;&amp; b&lt;10 &amp;&amp; c&lt;10;a++,b++,c++) &#123;</span><br><span class="line">    System.out.println(a) ;</span><br><span class="line">    System.out.println(b) ;</span><br><span class="line">    System.out.println(c) ;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="for循环练习"><a class="markdownIt-Anchor" href="#for循环练习">#</a> for 循环练习</h5>
+<p>100 以内的奇数和以及偶数和</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        int x1 = 0 ;</span><br><span class="line">        int y1 = 0 ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        for (int x = 0;x &lt; 100; x++)&#123;</span><br><span class="line">            if (x % 2 == 0)&#123;</span><br><span class="line">                x1 = x1 + x ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        for (int y = 0 ;y &lt; 100 ;y++)&#123;</span><br><span class="line">            if (y % 2 == 1)&#123;</span><br><span class="line">                y1 = y1 + y ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;偶数和&quot; + x1);</span><br><span class="line">        System.out.println(&quot;奇数和&quot; + y1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>嵌套 for 循环打印九九乘法表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class TTT &#123;</span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            for (int a = 1;a &lt; 10;a++)&#123;</span><br><span class="line">                for (int b = 1; b &lt;= a;b++)&#123;</span><br><span class="line">                    System.out.print(b + &quot;X&quot; + a + &quot;=&quot; + a*b + &quot;\t&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="增强for循环"><a class="markdownIt-Anchor" href="#增强for循环">#</a> 增强 for 循环</h5>
+<p>格式</p>
+<p>for (声明语句：表达式){</p>
+<p>// 语句</p>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int [] num = &#123;1,2,3,4,5,6,7,8,9,0&#125; ;  //定义数组</span><br><span class="line">        for ( int x : num )&#123;  //for (声明语句:表达式)</span><br><span class="line">            System.out.println(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="break-语句"><a class="markdownIt-Anchor" href="#break-语句">#</a> break 语句</h3>
+<p>用来终止循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int x = 0 ;x &lt;=100 ;x++)&#123;</span><br><span class="line">            System.out.println(x);</span><br><span class="line">            if (x==10)&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/break.webp" alt=""></p>
+<p>break</p>
+<h3 id="continue-语句"><a class="markdownIt-Anchor" href="#continue-语句">#</a> continue 语句</h3>
+<p>终止循环，跳到下一个循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int x = 0 ;x &lt;=11 ;x++)&#123;</span><br><span class="line">            if (x %10 == 0)&#123;</span><br><span class="line">                System.out.println(&quot;ZZZ&quot;);//x被10整除的时候输出,并且跳出if。进入循环</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/continue-1024x364.webp" alt=""></p>
+<p>continue</p>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/JAVA/" rel="tag"><i class="ic i-tag"></i> JAVA</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:25" itemprop="dateModified" datetime="2022-05-26T17:10:25+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="JAVA学习笔记(4)">http://xenolies.github.io/2022/03/20/java学习笔记3/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="JAVA学习笔记(3)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(3)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesx5fdwj20zk0m81kx.jpg" title="JAVA学习笔记(5)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(5)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.</span> <span class="toc-text"> 流程控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text"> 顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 分支语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text"> if 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95if-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 单 if 语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> if - else 语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else-if-else-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> if - else if - else 语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 嵌套 if 语句</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text"> switch 语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.1.</span> <span class="toc-text"> while 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF%E7%BB%83%E4%B9%A0"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> while 循环练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do-while%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.2.</span> <span class="toc-text"> do - while 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#do-while-%E5%BE%AA%E7%8E%AF%E7%BB%83%E4%B9%A0"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> do-while 循环练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.3.</span> <span class="toc-text"> for 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF%E7%BB%83%E4%B9%A0"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> for 循环练习</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> 增强 for 循环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.</span> <span class="toc-text"> break 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continue-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.</span> <span class="toc-text"> continue 语句</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></li><li><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></li><li><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="bookmark" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></li><li class="active"><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></li><li><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></li><li><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" rel="bookmark" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></li><li><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="JAVA学习笔记7">JAVA学习笔记7</a></li><li><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="bookmark" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></li><li><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="bookmark" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></li><li><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="bookmark" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></li><li><a href="/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" rel="bookmark" title="JAVA爬虫项目学习笔记（Maven框架）">JAVA爬虫项目学习笔记（Maven框架）</a></li><li><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="bookmark" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/08/%E5%90%8D%E5%AE%B6%E6%9D%82%E6%96%87%E3%80%8A%E9%9D%92%E5%B9%B4%E4%BA%BA%E7%9A%84%E9%98%85%E8%AF%BB%E3%80%8B/" title="名家杂文《青年人的阅读》">名家杂文《青年人的阅读》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Python/" title="In Python">Python</a>
+</div>
+
+    <span><a href="/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" title="Pyinstaller的简单安装使用">Pyinstaller的简单安装使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="享受探索的乐趣(《马里奥3D大陆》关卡设计分析)">享受探索的乐趣(《马里奥3D大陆》关卡设计分析)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/03/07/%E4%B8%96%E7%BA%AA%E8%8B%B1%E8%AF%ADcentury-english%E5%BF%85%E8%83%8C%E8%AF%8D%E8%AF%8D%E7%BB%84/" title="世纪英语(Century English)必背词&amp;词组(整理中)">世纪英语(Century English)必背词&词组(整理中)</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/20/java学习笔记3/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

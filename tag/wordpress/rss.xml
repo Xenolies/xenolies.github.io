@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;wordpress&#34; tag</title>
+        <link>http://xenolies.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Tue, 08 Feb 2022 10:54:56 +0800</pubDate>
+        <lastBuildDate>Tue, 08 Feb 2022 10:54:56 +0800</lastBuildDate>
+        <category>笔记</category>
+        <category>单片机</category>
+        <category>JAVA</category>
+        <category>编程</category>
+        <category>爬虫</category>
+        <category>MySQL</category>
+        <category>数据库</category>
+        <category>Python</category>
+        <category>网站</category>
+        <category>Wordpress</category>
+        <category>英语学习</category>
+        <category>心得体会</category>
+        <category>游戏设计</category>
+        <category>杂项</category>
+        <item>
+            <guid isPermalink="true">http://xenolies.github.io/2022/02/08/wordpress%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%87%AA%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</guid>
+            <title>WordPress一些个人自用插件推荐</title>
+            <link>http://xenolies.github.io/2022/02/08/wordpress%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%87%AA%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</link>
+            <category>Wordpress</category>
+            <pubDate>Tue, 08 Feb 2022 10:54:56 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;文中插件点击标题即可跳转到官方下载界面&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1akismet-反垃圾评论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1akismet-反垃圾评论&#34;&gt;#&lt;/a&gt; 1.&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvYWtpc21ldC8=&#34;&gt;Akismet 反垃圾评论&lt;/span&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;直接注册可以用免费版本的，会给个 API 密钥，这个插件可以减少垃圾评论的骚扰。&lt;/p&gt;
+&lt;p&gt;一定要记住给的 API 密钥（好像没法找回）&lt;/p&gt;
+&lt;h3 id=&#34;2ashuwp-invitaion-code&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2ashuwp-invitaion-code&#34;&gt;#&lt;/a&gt; 2.&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvYXNodXdwLWludml0YWlvbi1jb2RlLw==&#34;&gt;Ashuwp invitaion code&lt;/span&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以生成一些邀请码，用户在注册的时候可以输入。非常好用的插件。&lt;/p&gt;
+&lt;p&gt;用 Wordfence 扫描的话会出现提示说要升级，不用管它就行 (好几年没更新了的说ㄟ ( ▔, ▔) ㄏ)。&lt;/p&gt;
+&lt;h3 id=&#34;3fonts-plugin&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3fonts-plugin&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.&lt;/strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvb2x5bXB1cy1nb29nbGUtZm9udHMv&#34;&gt;Fonts Plugin&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;可以设置更多的字体，&lt;/p&gt;
+&lt;p&gt;我个人还是喜欢比较适合阅读的字体 2333&amp;lt;---- 胡说你就是懒 (￣ε(#￣)☆╰╮o (￣皿￣///)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-9-1024x480.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;只能在 “外观” 中的 “自定义” 模式里使用&lt;/p&gt;
+&lt;h3 id=&#34;4wordfence&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4wordfence&#34;&gt;#&lt;/a&gt; 4.&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvd29yZGZlbmNlLw==&#34;&gt;Wordfence&lt;/span&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-10-1024x438.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;网站安全防护插件，自动配置无法进行的话，可以使用手动配置。&lt;/p&gt;
+&lt;p&gt;手动配置的话，要先找到建站目录下的 user.ini 话说这不就是官方教程吗&lt;/p&gt;
+&lt;p&gt;然后打开加入这句话&lt;/p&gt;
+&lt;h3 id=&#34;5wp-mail-smtp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5wp-mail-smtp&#34;&gt;#&lt;/a&gt; 5.&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvd3AtbWFpbC1zbXRwLw==&#34;&gt;WP Mail SMTP&lt;/span&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;一般博客网站会有博主回复的邮件提示，这个插件就可以实现这个功能。&lt;/p&gt;
+&lt;p&gt;可以申请个企业邮箱或者小号的邮箱来发邮件 2333&lt;/p&gt;
+&lt;p&gt;记得要设置下 SMTP 主机。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-14-1024x603.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;QQ 邮箱的话可以在 “设置” 中的 “账户‘进行设置。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-15-1024x343.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;阿里云企业邮箱的话，我一开始没找到服务器，然后没不知道 SMTP 密码。后来找帖子找出来了，就是下面这个。&lt;/p&gt;
+&lt;p&gt;下面这是个服务器&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NtdHAubXhoaWNoaW5hLmNvbQ==&#34;&gt;smtp.mxhichina.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;至于 SMTP 密码，就是阿里云邮箱的登录密码了。&lt;/p&gt;
+&lt;h3 id=&#34;6经典编辑器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6经典编辑器&#34;&gt;#&lt;/a&gt; 6.&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvY2xhc3NpYy1lZGl0b3Iv&#34;&gt; 经典编辑器&lt;/span&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;这个比较适合单纯些文章的博客了。（写代码的话，不知道为啥，我的会出现代码缩进全部没了的情况&lt;/p&gt;
+&lt;p&gt;然后花了快半个小时给 Python 加缩进，还没法用 Tab），当然两个编辑器也是可切换的。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;“设置” 里面的 “撰写设置” 切换&lt;/p&gt;
+&lt;p&gt;如果在经典编辑器上写好的内容，转到区块编辑器会显示成一个名为 “经典” 的区块&lt;/p&gt;
+&lt;p&gt;经典编辑器的效果就是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-12-1024x615.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;经典编辑器&lt;/p&gt;
+&lt;p&gt;区块编辑器的是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-13-1024x503.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;区块编辑器&lt;/p&gt;
+&lt;h3 id=&#34;7wp-china-yes&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7wp-china-yes&#34;&gt;#&lt;/a&gt; 7.&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93cC1jaGluYS5vcmcv&#34;&gt;WP-China-Yes&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;这款插件可以更方便的下载 wordpress 插件不用麻烦的上传了。&lt;/p&gt;
+&lt;p&gt;如何形容呢？&lt;/p&gt;
+&lt;p&gt;比方说，原来下载是这样子：妮可妮可妮 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTNiNHkxUTd5Zz9zaGFyZV9zb3VyY2U9Y29weV93ZWI=&#34;&gt;妮可妮可妮（（（&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/2019632242261259.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装之后是：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tse1-mm.cn.bing.net/th/id/R-C.9858cc71083664437cdff38781824361?rik=D3oDxeqznHrKIA&amp;amp;riu=http%3a%2f%2fwww.bkill.com%2fu%2fupload%2f2018%2f10%2f21%2f212349295799.gif&amp;amp;ehk=pIEB9zGi%2bJH6ktmQ3BHTnnSdqBZyFh9ojAC%2b3RfLu7c%3d&amp;amp;risl=&amp;amp;pid=ImgRaw&amp;amp;r=0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8heimu&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8heimu&#34;&gt;#&lt;/a&gt; 8.&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi53b3JkcHJlc3Mub3JnL3BsdWdpbnMvaGVpbXUv&#34;&gt;Heimu&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;插件功能如其名，就是添加黑幕的。&lt;/p&gt;
+&lt;p&gt;安装好后，就可以用了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-28.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;像这样：我永远喜欢萌百娘！！！&lt;/p&gt;
+&lt;h3 id=&#34;特别注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特别注意&#34;&gt;#&lt;/a&gt; 特别注意&lt;/h3&gt;
+&lt;p&gt;使用延迟加载插件有几率出现遮挡不全的 BUG，慎用&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-29-1024x506.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如图&lt;/p&gt;
+&lt;p&gt;总之，这些插件需要者可以自己去安装，当然有不足之处，还请评论区指出。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

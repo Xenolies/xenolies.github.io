@@ -1,0 +1,580 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,JAVA,编程" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+
+
+  <title>
+JAVA学习笔记(2) - JAVA |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">JAVA学习笔记(2)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-03-11 10:48:54">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-11T10:48:54+08:00">2022-03-11</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/JAVA/" itemprop="item" rel="index" title="In JAVA"><span itemprop="name">JAVA</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="运算符和表达式"><a class="markdownIt-Anchor" href="#运算符和表达式">#</a> 运算符和表达式</h2>
+<h3 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> 运算符</h3>
+<h4 id="运算符分类"><a class="markdownIt-Anchor" href="#运算符分类">#</a> 运算符分类</h4>
+<h5 id="算数运算符"><a class="markdownIt-Anchor" href="#算数运算符">#</a> 算数运算符</h5>
+<p>+ （加）, - （减） , * （乘） , / （除） , %（取模） , ++ (自增，加一) , – （自减，减一）,</p>
+<h5 id="关系运算符"><a class="markdownIt-Anchor" href="#关系运算符">#</a> 关系运算符</h5>
+<p>&gt; （大于）, &lt;（小于） ,&gt;=（大于等于） , ==（等于） , != （不等于）</p>
+<h5 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符">#</a> 逻辑运算符</h5>
+<p>&amp;&amp;(与) ， （或） ，!(非) ,^（抑或）</p>
+<h5 id="条件运算符"><a class="markdownIt-Anchor" href="#条件运算符">#</a> 条件运算符</h5>
+<p>表示为 “? :” ，是 JAVA 中唯一一个三目运算符，</p>
+<p>&lt;1&gt; ? &lt;2&gt; : &lt;3&gt;</p>
+<p>1 为真，1 赋为 2 的值，1 为假，1 赋为 3 的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Example09&#123; </span><br><span class="line">public static void main(String[] args) &#123; </span><br><span class="line">int x = 5 ;  //</span><br><span class="line">int y = 10 ; //</span><br><span class="line">int z ;  //</span><br><span class="line">z = y &gt; x ? y : x ;  // y &gt; x 为true, 返回10</span><br><span class="line">System.out.println(z);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运算符优先级"><a class="markdownIt-Anchor" href="#运算符优先级">#</a> 运算符优先级</h4>
+<p><img data-src="https://image.xenolies.xyz/2022/03/JAVA_%E4%BC%98%E5%85%88%E7%BA%A7-923x1024.webp" alt=""></p>
+<p>优先级</p>
+<p>优先级</p>
+<p>运算符</p>
+<p>结合性</p>
+<p>1</p>
+<p>()、[]、{}</p>
+<p>从左向右</p>
+<p>2</p>
+<p>!、+、-、~、++、–</p>
+<p>从右向左</p>
+<p>3</p>
+<p>*、/、%</p>
+<p>从左向右</p>
+<p>4</p>
+<p>+、-</p>
+<p>从左向右</p>
+<p>5</p>
+<p>«、»、&gt;&gt;&gt;</p>
+<p>从左向右</p>
+<p>6</p>
+<p>&lt;、&lt;=、&gt;、&gt;=、instanceof</p>
+<p>从左向右</p>
+<p>7</p>
+<p>==、!=</p>
+<p>从左向右</p>
+<p>8</p>
+<p>&amp;</p>
+<p>从左向右</p>
+<p>9</p>
+<p>^</p>
+<p>从左向右</p>
+<p>10</p>
+<p>从左向右</p>
+<p>11</p>
+<p>&amp;&amp;</p>
+<p>从左向右</p>
+<p>12</p>
+<p>从左向右</p>
+<p>13</p>
+<p>?:</p>
+<p>从右向左</p>
+<p>14</p>
+<p>=、+=、-=、*=、/=、&amp;=、=、^=、~=、«=、»=、&gt;&gt;&gt;=</p>
+<p>从右向左</p>
+<p>JAVA 运算符优先级</p>
+<p>此表来自这篇<span class="exturl" data-url="aHR0cDovL2MuYmlhbmNoZW5nLm5ldC92aWV3Lzc5NC5odG1s">文章</span></p>
+<h4 id="其他"><a class="markdownIt-Anchor" href="#其他">#</a> 其他</h4>
+<h5 id="在运算中-a-和-a-的区别"><a class="markdownIt-Anchor" href="#在运算中-a-和-a-的区别">#</a> 在运算中 a++ 和 ++a 的区别</h5>
+<p>如果是 a++，a 先参加运算然后在加一，和优先级无关，如果是 ++a，则反，</p>
+<h5 id="前后自增自减运算规则"><a class="markdownIt-Anchor" href="#前后自增自减运算规则">#</a> <strong>前后自增自减</strong>运算规则</h5>
+<ul>
+<li>
+<p><strong>前自增 / 自减（++a , --a）的运算规则是</strong>：先进行自增或者自减运算，再进行表达式运算；</p>
+</li>
+<li>
+<p><strong>后自增 / 自减 (a++ , a–) 的运算规则是</strong>：先进行表达式运算，再进行自增或者自减运算。</p>
+</li>
+</ul>
+<p>上面的运算规则来自 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW1vb2MuY29tL3dpa2kvamF2YWxlc3Nvbi9leHByZXNzaW9ucy5odG1s">这篇文章</span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Example01&#123; </span><br><span class="line">public static void main(String[] args) &#123; </span><br><span class="line">int x = 5 ;  </span><br><span class="line">int y = 10 ; </span><br><span class="line">int z ;  </span><br><span class="line">z = ++x + y++ ;  </span><br><span class="line">System.out.println(z);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 1+5+10,运算完成后，y+1</span><br></pre></td></tr></table></figure>
+<h3 id="表达式"><a class="markdownIt-Anchor" href="#表达式">#</a> 表达式</h3>
+<p>表达式是根据 Java 语法由<strong>变量</strong>、<strong>运算符</strong>和<strong>方法调用</strong>组成的结构，表达式的结算结果为<strong>单个值</strong>。</p>
+<h4 id="表达式实例"><a class="markdownIt-Anchor" href="#表达式实例">#</a> 表达式实例</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Expression &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      int a = 10, b = 20;</span><br><span class="line">      // (a + b) * 2 就是一个算数表达式</span><br><span class="line">      int c = (a + b) * 2;</span><br><span class="line">      // c &gt; b 就是一个布尔表达式</span><br><span class="line">      if (c &gt; b) &#123; </span><br><span class="line">          System.out.println(&quot;c大于b&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="表达式中的数据类型转换"><a class="markdownIt-Anchor" href="#表达式中的数据类型转换">#</a> 表达式中的数据类型转换</h4>
+<p>转换规律：</p>
+<p>高精度（float,double 等）<strong>不可以</strong>向低精度 (int,long,byte 等) 转换</p>
+<p>可以从低精度向着高精度转换</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1024x576.webp" alt=""></p>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/JAVA/" rel="tag"><i class="ic i-tag"></i> JAVA</a>
+          <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 编程</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:25" itemprop="dateModified" datetime="2022-05-26T17:10:25+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="JAVA学习笔记(2)">http://xenolies.github.io/2022/03/11/java学习笔记2/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetlbztpj20zk0m84qp.jpg" title="MySQL学习笔记(2)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> MySQL</span>
+  <h3>MySQL学习笔记(2)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclffsa1cj20zk0m811l.jpg" title="我的一些关卡设计心得">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 杂项</span>
+  <h3>我的一些关卡设计心得</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 运算符和表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 运算符分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 算数运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 关系运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 逻辑运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.1.4.</span> <span class="toc-text"> 条件运算符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 运算符优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 其他</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8%E8%BF%90%E7%AE%97%E4%B8%AD-a-%E5%92%8C-a-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 在运算中 a++ 和 ++a 的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 前后自增自减运算规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 表达式实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 表达式中的数据类型转换</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></li><li class="active"><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></li><li><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="bookmark" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></li><li><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></li><li><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></li><li><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" rel="bookmark" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></li><li><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="JAVA学习笔记7">JAVA学习笔记7</a></li><li><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="bookmark" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></li><li><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="bookmark" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></li><li><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="bookmark" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></li><li><a href="/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" rel="bookmark" title="JAVA爬虫项目学习笔记（Maven框架）">JAVA爬虫项目学习笔记（Maven框架）</a></li><li><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="bookmark" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="MySQL学习笔记(4)（更新中）">MySQL学习笔记(4)（更新中）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" title="In 单片机">单片机</a>
+</div>
+
+    <span><a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ESP32制作小电视学习笔记">ESP32制作小电视学习笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/11/java学习笔记2/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

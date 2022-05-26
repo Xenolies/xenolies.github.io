@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;python&#34; tag</title>
+        <link>http://xenolies.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Wed, 09 Feb 2022 21:47:36 +0800</pubDate>
+        <lastBuildDate>Wed, 09 Feb 2022 21:47:36 +0800</lastBuildDate>
+        <category>笔记</category>
+        <category>单片机</category>
+        <category>JAVA</category>
+        <category>编程</category>
+        <category>爬虫</category>
+        <category>MySQL</category>
+        <category>数据库</category>
+        <category>Python</category>
+        <category>网站</category>
+        <category>Wordpress</category>
+        <category>英语学习</category>
+        <category>心得体会</category>
+        <category>游戏设计</category>
+        <category>杂项</category>
+        <item>
+            <guid isPermalink="true">http://xenolies.github.io/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+            <title>Pyinstaller的简单安装使用</title>
+            <link>http://xenolies.github.io/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+            <category>Python</category>
+            <pubDate>Wed, 09 Feb 2022 21:47:36 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Pyinstaller 是可以把 Python 工程打包成为 exe 的一个 Python 模块。网上教程有很多，但是我在使用的时候会遇到很多问题，进而搜索大量网页，非常麻烦。所以准备写一篇文章把我碰到的一些问题整合起来，这样的话免去去查找大量网站的烦恼。&lt;/p&gt;
+&lt;h3 id=&#34;1如何安装pyinstaller&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1如何安装pyinstaller&#34;&gt;#&lt;/a&gt; 1. 如何安装 Pyinstaller&lt;/h3&gt;
+&lt;p&gt;最简单的方法就是打开 Win+R 输入 cmd，打开 cmd 窗口输入&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pip install pyinstaller&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但是，&lt;/p&gt;
+&lt;p&gt;有的时候你安装好了 Python，用 pip 安装的时候会出现这个问题：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-17.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个就说明 Python 的环境变量没有配置好，需要配置下，这时候需要找到 Python 安装目录下的 Scripts 文件夹，像我的就是 C:\Users\111\AppData\Local\Programs\Python\Python311\Scripts&lt;/p&gt;
+&lt;p&gt;确认文件夹下有没有 pip.exe, 如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-18.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果有的话，把文件夹路径复制下来，然后就去 “环境变量” 那里找到 path 变量，添加地址保存即可&lt;/p&gt;
+&lt;p&gt;配置完成后记得重新打开 CMD 安装窗&lt;/p&gt;
+&lt;p&gt;如何找到环境变量，请在这个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9uZXcucXEuY29tL29tbi8yMDIxMTIwMi8yMDIxMTIwMkEwOENDVzAwLmh0bWw=&#34;&gt;帖子&lt;/span&gt;查看。&lt;/p&gt;
+&lt;p&gt;如果出现这个了，说明正在安装了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-19.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后显示这个，就说明成功安装了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-21-1024x64.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果出现这个了，说明要升级 pip&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-20-1024x67.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;直接输入下面这个就可以了。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;python -m pip install --upgrade pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;2用pyinstaller打包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2用pyinstaller打包&#34;&gt;#&lt;/a&gt; 2. 用 Pyinstaller 打包&lt;/h3&gt;
+&lt;p&gt;Pyinstaller 主要语法就是：Pyinstaller + 指令 + Python 文件&lt;/p&gt;
+&lt;p&gt;下面就是些常用的指令：&lt;/p&gt;
+&lt;p&gt;-F，-onefile&lt;/p&gt;
+&lt;p&gt;产生单个的可执行文件&lt;/p&gt;
+&lt;p&gt;-D，–onedir&lt;/p&gt;
+&lt;p&gt;产生一个目录（包含多个文件）作为可执行程序&lt;/p&gt;
+&lt;p&gt;-a，–ascii&lt;/p&gt;
+&lt;p&gt;不包含 Unicode 字符集支持&lt;/p&gt;
+&lt;p&gt;-d，–debug&lt;/p&gt;
+&lt;p&gt;产生 debug 版本的可执行文件&lt;/p&gt;
+&lt;p&gt;-w，–windowed，–noconsolc&lt;/p&gt;
+&lt;p&gt;指定程序运行时不显示命令行窗口（仅对 Windows 有效）&lt;/p&gt;
+&lt;p&gt;-c，–nowindowed，–console&lt;/p&gt;
+&lt;p&gt;指定使用命令行窗口运行程序（仅对 Windows 有效）&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2MuYmlhbmNoZW5nLm5ldC92aWV3LzI2OTAuaHRtbA==&#34;&gt;上表来源&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;然后就可以在 cmd 窗口输入指令来打包了，打包的时候记得转到文件所在的文件夹&lt;/p&gt;
+&lt;p&gt;转到要打包的 Python 所在的文件夹，可以使用 cd + 空格 + 文件夹地址来实现&lt;/p&gt;
+&lt;p&gt;这样就说明打包成功了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-24.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中这个&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-23.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;是最后 exe 文件输出的地址&lt;/p&gt;
+&lt;p&gt;还要这个&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-24.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说明已经打包成为 exe 文件了&lt;/p&gt;
+&lt;p&gt;之后就可以使用了，不需要再搭建 Python 环境了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-26.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果打包完成发现窗口一闪而过，可以试试在代码末尾加一个 input ()&lt;/p&gt;
+&lt;p&gt;像这样&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-25.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;还有个缺少一些文件产生的问题，我自己重新打包的时候发现并没有碰到，测试了下发现无法复现，只好作罢。只记得那个要在 Pyinstaller -F 后面加一串来着。&lt;/p&gt;
+&lt;h3 id=&#34;3日后谈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3日后谈&#34;&gt;#&lt;/a&gt; 3. 日后谈&lt;/h3&gt;
+&lt;p&gt;有些问题我当时使用的时候碰到了，现在没法复现，我自己也无法找到当时找的帖子了，有不少疏忽非常抱歉。(之后要是接着更新也说不定)&lt;/p&gt;
+&lt;p&gt;如有建议，欢迎留言，本人必洗耳恭听。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

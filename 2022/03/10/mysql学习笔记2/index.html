@@ -1,0 +1,737 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,MySQL,数据库" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+
+
+  <title>
+MySQL学习笔记(2) - MySQL |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MySQL学习笔记(2)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-03-10 10:19:16">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-10T10:19:16+08:00">2022-03-10</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/MySQL/" itemprop="item" rel="index" title="In MySQL"><span itemprop="name">MySQL</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="mysql基本操作"><a class="markdownIt-Anchor" href="#mysql基本操作">#</a> MySQL 基本操作</h2>
+<h3 id="数据库基本操作"><a class="markdownIt-Anchor" href="#数据库基本操作">#</a> 数据库基本操作</h3>
+<h4 id="创建数据库"><a class="markdownIt-Anchor" href="#创建数据库">#</a> 创建数据库</h4>
+<p>使用 Create database + 库名 来创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create database T1 ; #创建一个名为&quot;T1&quot;的数据库</span><br></pre></td></tr></table></figure>
+<p>创建成功会显示这个：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/Create-database-T1.webp" alt=""></p>
+<p>使用参数 if not exists 可以在创建数据库时，出现相同数据库的时候不报错 (一般情况下创建相同名称数据库会报错)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create database if not exists T1 ; #创建一个名为&quot;T1&quot;的数据库</span><br></pre></td></tr></table></figure>
+<p>当然也是可以设置数据库字符集。</p>
+<p>创建字符集为 gb2312 的数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create database if not exists T1 default character set gb2312 ; #创建名为“T1”的数据库，字符集设定为gb2312</span><br></pre></td></tr></table></figure>
+<p>排序规则（校对规则）: 是指对指定字符集下不同字符的比较规则。</p>
+<p>查看可用的排序规则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collsation ; #查看可用的排序规则</span><br></pre></td></tr></table></figure>
+<p>创建数据库 T1，修改字符集为 utf8，更改排序规则为 utf8_unicode_ci</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create database T1 default character set utf8 default collate utf8_unicode_ci ; #创建数据库T1，修改字符集为 utf8，更改排序规则为utf8_unicode_ci</span><br></pre></td></tr></table></figure>
+<h4 id="查看数据库"><a class="markdownIt-Anchor" href="#查看数据库">#</a> 查看数据库</h4>
+<p>查看数据库定义（字符集和排序规则）</p>
+<p>show create database + 空格 + 库名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database T1 ; #查询T1数据库定义</span><br></pre></td></tr></table></figure>
+<h4 id="使用数据库"><a class="markdownIt-Anchor" href="#使用数据库">#</a> 使用数据库</h4>
+<p>use + 库名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use T1 ; #使用T1数据库</span><br></pre></td></tr></table></figure>
+<h4 id="修改数据库"><a class="markdownIt-Anchor" href="#修改数据库">#</a> 修改数据库</h4>
+<p>alter database + 库名 default character set + 新字符集 default collate + 新排序规则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database T1 default character set gbk ;#将T1数据库的字符集改为gbk</span><br></pre></td></tr></table></figure>
+<h4 id="删除数据库"><a class="markdownIt-Anchor" href="#删除数据库">#</a> 删除数据库</h4>
+<p>drop database + 库名来删除数据库 (此命令不可以用来删除数据库中的表)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database T1 ; #删除T1数据库</span><br></pre></td></tr></table></figure>
+<h4 id="数据库的一些其他指令"><a class="markdownIt-Anchor" href="#数据库的一些其他指令">#</a> 数据库的一些其他指令</h4>
+<p>MySQL 默认结束符为分号 (&quot;;&quot;)</p>
+<p>修改结束符:</p>
+<p>delimiter + 空格 + 新结束符</p>
+<p>修改结束符只能单次使用，重启后将转为默认</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delimiter ！ #将结束符换为 &quot;!&quot;</span><br></pre></td></tr></table></figure>
+<p>可以用指令验证</p>
+<p>show databases + 新结束符：展示数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases ! #展示数据库</span><br></pre></td></tr></table></figure>
+<p>退出 MySQL：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">quit #退出数据库</span><br><span class="line"></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>查看服务器信息:</p>
+<p>Status + 空格 + 结束符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Status ; #显示服务器信息</span><br></pre></td></tr></table></figure>
+<h3 id="数据表基本操作"><a class="markdownIt-Anchor" href="#数据表基本操作">#</a> 数据表基本操作</h3>
+<h4 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> 数据类型</h4>
+<h5 id="整型"><a class="markdownIt-Anchor" href="#整型">#</a> 整型</h5>
+<p>int 占用四个字节</p>
+<p>bigint 占用八个字节</p>
+<p>Tinyint 占用一个字节</p>
+<p>smallint 占用两个字节</p>
+<p>mediumint 占用三个字节</p>
+<p>整型类型</p>
+<p>占用字节</p>
+<p>int</p>
+<p>4</p>
+<p>bigint</p>
+<p>8</p>
+<p>Tinyint</p>
+<p>1</p>
+<p>smallint</p>
+<p>2</p>
+<p>mediumint</p>
+<p>3</p>
+<p>整型类型</p>
+<p>适用于 ：有数值，有大小比较的。</p>
+<h5 id="浮点型"><a class="markdownIt-Anchor" href="#浮点型">#</a> 浮点型</h5>
+<p>有小数点的数值</p>
+<p>Float (m,d)</p>
+<p>double(m,d)</p>
+<p>其中:</p>
+<p>m 表示该数值有几位整数，</p>
+<p>d 表示小数点后面有几位</p>
+<p>float (3,2) ; -9.99 — +9.99</p>
+<h5 id="字符串"><a class="markdownIt-Anchor" href="#字符串">#</a> 字符串</h5>
+<p>字母，汉字，数字符号，特殊符号构成的数据对象</p>
+<p>适用于：身份证号，编号，电话号码。联系地址，名称等</p>
+<p>char：定长字符串，长度为 0 - 255。保存 char 时，在右边填充空格来达到指定长度</p>
+<p>varchar ：可变字符串，长度为 0 - 65535。只保存需要的字符数，另外再加一个字节来记录</p>
+<p>如果超出规定长度，char 和 varchar 会对值裁剪以适应，如果裁剪的字符不是空格，会发出警告。</p>
+<p>如果超出规定长度，char 和 varchar 会对值裁剪以适应，如果裁剪的字符不是空格，会发出警告。</p>
+<h5 id="blob-和text类型"><a class="markdownIt-Anchor" href="#blob-和text类型">#</a> blob 和 text 类型</h5>
+<p>(非二进制字符串）</p>
+<p>存储声音，视频，头像等设置</p>
+<h5 id="时间和日期类型"><a class="markdownIt-Anchor" href="#时间和日期类型">#</a> 时间和日期类型</h5>
+<p>date , time 和 datatime</p>
+<p>固定的格式数据，存储的是日期和时间</p>
+<p><strong>date 类型</strong></p>
+<p>存储格式 ： yyyy - mm - dd</p>
+<p>支持范围 ： 1000 - 01 - 01 ~~9999 - 12 - 31</p>
+<p><strong>time 类型</strong></p>
+<p>存储格式 : hh : mm : ss</p>
+<p>支持范围；-838 : 59 : 59 ~~ 838 : 59 : 59</p>
+<p><strong>datetime 类型</strong></p>
+<p>表示日期时间</p>
+<p>存储格式 : yyyy - mm - dd hh : mm : ss</p>
+<p>支持范围 ：1000 - 01 - 01 00 : 00 : 00 ~~ 9999 - 12 -31 23 : 59 :59</p>
+<p>timestamp 类型</p>
+<p>客户端插入的时间从当前时区转化为 UTC（世界标准时间）进行存储。查询时，将其又转化为客户端当前时区进行返回</p>
+<h4 id="创建数据表"><a class="markdownIt-Anchor" href="#创建数据表">#</a> 创建数据表</h4>
+<p>在数据库中新建数据表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table t1 ; #创建名为 t1 数据表 </span><br></pre></td></tr></table></figure>
+<p>创建数据表，规定长度</p>
+<p>创建前记得使用数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use t1 ;  //使用t1数据库</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table t0 </span><br><span class="line">(name char(10),</span><br><span class="line">logintime date,</span><br><span class="line">mail varchar(20),</span><br><span class="line">score float(5,2),</span><br><span class="line">list int(5),</span><br><span class="line">photo text comment&quot;头像&quot;);</span><br><span class="line"></span><br><span class="line"> #创建名为 t0 数据表</span><br></pre></td></tr></table></figure>
+<p>comment ： 解释。一般放在数据类型后面，表示对于字段名的解释，可以理解成为注释。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">comment &quot;解释内容&quot;  #comment使用方法</span><br></pre></td></tr></table></figure>
+<p>创建临时表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create temporary table (N1) ;</span><br><span class="line"></span><br><span class="line">create temporary table () ; //创建临时数据表</span><br></pre></td></tr></table></figure>
+<p>N1 包含两个字段：id 和 name</p>
+<h4 id="查看数据表"><a class="markdownIt-Anchor" href="#查看数据表">#</a> 查看数据表</h4>
+<h5 id="查找数据表"><a class="markdownIt-Anchor" href="#查找数据表">#</a> 查找数据表</h5>
+<p>XX 为需要查找名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show table like &quot;XX%&quot; ; </span><br><span class="line"></span><br><span class="line">//可以查找多个字符,只要指定包含查找字段就会被查找到</span><br><span class="line">//如果查找 &quot;X%&quot;,则会出现 XXX,XYX,XXYXY,XXYXYX</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show table like&quot;XX_&quot; ;</span><br><span class="line">//只能查找单个字符</span><br><span class="line">//如果查找&quot;X_&quot;,则会出现XX,</span><br></pre></td></tr></table></figure>
+<h5 id="查看数据表的列"><a class="markdownIt-Anchor" href="#查看数据表的列">#</a> 查看数据表的列</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//desc + 表名 +列名 ;</span><br><span class="line">//查看teacher表中的teachearID列</span><br><span class="line">desc teacher teacherID ;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.xenolies.xyz/2022/04/desc_biaominglieming.webp" alt=""></p>
+<h5 id="查看数据表状况"><a class="markdownIt-Anchor" href="#查看数据表状况">#</a> 查看数据表状况</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show table status ;  //查看数据表</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.xenolies.xyz/2022/03/show-table-status-1024x156.webp" alt=""></p>
+<p>但是如果数据表太多会难以查找，需要在末尾加个 \G，变为横向排列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show table status \G</span><br></pre></td></tr></table></figure>
+<p>如果加了 \G ，就不需要结束符了，否则会报错</p>
+<p><img data-src="https://image.xenolies.xyz/2022/03/show-table-status-G.webp" alt=""></p>
+<p>查看存在数据表的名称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show table + 表名 ; #查看存在数据表的名称</span><br></pre></td></tr></table></figure>
+<p>查看数据表结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc/describe + 表名 ; #查看数据表结构</span><br></pre></td></tr></table></figure>
+<h5 id="查看表的定义语句"><a class="markdownIt-Anchor" href="#查看表的定义语句">#</a> 查看表的定义语句</h5>
+<p>查看表里有什么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//show create table + 表名 ;</span><br><span class="line"></span><br><span class="line">show create table score ;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.xenolies.xyz/2022/03/show-create-table.webp" alt=""></p>
+<h5 id="查看表的结构"><a class="markdownIt-Anchor" href="#查看表的结构">#</a> 查看表的结构</h5>
+<p>使用 describe 可查看字段定义，键的信息，默认值等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> //desc / describe + 表名 ;</span><br><span class="line">describe score ;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.xenolies.xyz/2022/03/describe-score.webp" alt=""></p>
+<h5 id="根据指定条配件来查询"><a class="markdownIt-Anchor" href="#根据指定条配件来查询">#</a> 根据指定条配件来查询</h5>
+<p>消除结果集中的重复行</p>
+<p>使用 Distinct 关键字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT [字段名1，字段名2] FROM 表名 ;</span><br></pre></td></tr></table></figure>
+<p>多个字段名的话，只有两个字段完全相同。DISTINCT 关键字才会同时消除</p>
+<p>实现有条件筛选</p>
+<p>运算符</p>
+<p>运算符</p>
+<p>名称</p>
+<p>说明</p>
+<p>=</p>
+<p>等于</p>
+<p>&lt;&gt; !=</p>
+<p>不等于</p>
+<p>&lt; &lt;= &gt; &gt;=</p>
+<p>小于，小于等于，大于，大于等于</p>
+<p>Between</p>
+<p>在… 之间</p>
+<p>is null</p>
+<p>空值</p>
+<p>between</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select</span><br></pre></td></tr></table></figure>
+<p>多条件查询</p>
+<p>Where 条件</p>
+<p>说明</p>
+<p>And</p>
+<p>两个或者多个条件同时满足</p>
+<p>Or</p>
+<p>两个或者多个条件满足一个</p>
+<p>In</p>
+<p>多个条件中的一个</p>
+<p>Like</p>
+<p>搭配 % 通配符或者_通配符来模糊搜索</p>
+<h4 id="修改数据表"><a class="markdownIt-Anchor" href="#修改数据表">#</a> 修改数据表</h4>
+<p>alter table + 表名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table + 表名 ；</span><br></pre></td></tr></table></figure>
+<p>[warning] 注意，以下修改数据表所有操作都要加 alter table + 表名。[/warning]</p>
+<h5 id="添加新字段"><a class="markdownIt-Anchor" href="#添加新字段">#</a> <strong>添加新字段</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add  字段名 + 字段名定义 ；</span><br></pre></td></tr></table></figure>
+<p>可以在末尾加 first 或者 aftear 来在指定字段前新增字段</p>
+<h5 id="添加默认值和删除默认值"><a class="markdownIt-Anchor" href="#添加默认值和删除默认值">#</a> <strong>添加默认值和删除默认值</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 alter  字段名 set default + 默认值 ; //修改默认值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 alter  字段名 drop default ; // 删除默认值 </span><br></pre></td></tr></table></figure>
+<h5 id="修改字段名"><a class="markdownIt-Anchor" href="#修改字段名">#</a> <strong>修改字段名</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change  旧字段名 + 新字段名 + 字段 ;</span><br></pre></td></tr></table></figure>
+<h5 id="修改字段定义"><a class="markdownIt-Anchor" href="#修改字段定义">#</a> <strong>修改字段定义</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify  + 字段名 + 字段的新定义  ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student modify  studentmark text ;</span><br></pre></td></tr></table></figure>
+<h5 id="删除字段"><a class="markdownIt-Anchor" href="#删除字段">#</a> <strong>删除字段</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop + 字段名 ;</span><br></pre></td></tr></table></figure>
+<p><strong>删除多个字段</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop 字段1 drop 字段2 ;</span><br></pre></td></tr></table></figure>
+<h5 id="为表重命名"><a class="markdownIt-Anchor" href="#为表重命名">#</a> <strong>为表重命名</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 rename to + 新表名 ;</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<p>为表添加备注字段，字段名为 studentremark, 数据类型为 varcgar (100)，放置在 stuname 字段之后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table score add studentremark varchar(100) after stuname ;</span><br></pre></td></tr></table></figure>
+<p>为 score 添加一个字段，字段名为 classid 数据类型为 varchar (10)，默认值为 10</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table score add classid varchar(10) set default 10 after studentremark ;</span><br></pre></td></tr></table></figure>
+<p>验证</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#desc + 表名 ;</span><br><span class="line">desc score ;</span><br></pre></td></tr></table></figure>
+<h5 id="为字段增加内容"><a class="markdownIt-Anchor" href="#为字段增加内容">#</a> <strong>为字段增加内容</strong></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values(内容1，内容2);</span><br></pre></td></tr></table></figure>
+<p><strong>分字段批量增加内容</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(字段名1，字段名2)values(内容1,内容2) ;</span><br></pre></td></tr></table></figure>
+<p>添加多组内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values(内容1,内容2)(内容3,内容4) ;</span><br></pre></td></tr></table></figure>
+<p>将指定字段导入到新表中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//insert into 目标表(字段1，字段2) select (字段1，字段2) from 来源表</span><br><span class="line">insert into student(Name，StudentID) select (Name，StudentID) from StuentClass</span><br></pre></td></tr></table></figure>
+<h5 id="update修改表的数据"><a class="markdownIt-Anchor" href="#update修改表的数据">#</a> update 修改表的数据</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//update 表名 set 字段名1 = 值1，字段名2 = 值2 where 条件</span><br></pre></td></tr></table></figure>
+<p>[warning] update 修改的是表中数据，不是字段 [/warning]</p>
+<p>多表数据修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名列表 set 表名.字段名1 =  值1, 表名.字段名2 = 值2 where 表名.条件 ；</span><br></pre></td></tr></table></figure>
+<p>表名。字段名 表示表中的某个字段</p>
+<h5 id="按条件删除数据"><a class="markdownIt-Anchor" href="#按条件删除数据">#</a> 按条件删除数据</h5>
+<p>delete , truncate 来删除</p>
+<p>使用 delete 删除</p>
+<p>删除表中 ++ 所有数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//delete from 表名 ;</span><br></pre></td></tr></table></figure>
+<p>删除表中的部分数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 where 条件 ；</span><br></pre></td></tr></table></figure>
+<p>区别</p>
+<p>Delete: 删除部分数据或者所有数据，执行速度较慢，删除后日志中可找回<br>
+ truncate：删除表中所有数据，删除速度较快，不能使用 where 子句，无法找回</p>
+<h4 id="复制数据表"><a class="markdownIt-Anchor" href="#复制数据表">#</a> 复制数据表</h4>
+<p>create [if not exists] 新表名</p>
+<p>[like 参照表名]</p>
+<p>[al {selsct 语句}]</p>
+<p>like 像：创建一个和草诏表名结果相同的新表，不复制内容，其他的都复制</p>
+<p>as 完全复制表的内容，单索引和完整性拘束不会复制，selsct 语句是一个表达式，可以是一个 selsc 语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use bookstore;</span><br><span class="line">create table book like book_copy1;</span><br><span class="line">create table book_copy2 as(select * from book);</span><br></pre></td></tr></table></figure>
+<h4 id="删除数据表"><a class="markdownIt-Anchor" href="#删除数据表">#</a> 删除数据表</h4>
+<p>dorp table [if not exists] + 表名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dorp table if not exists student ;</span><br></pre></td></tr></table></figure>
+<h4 id="其他"><a class="markdownIt-Anchor" href="#其他">#</a> 其他</h4>
+<p>存储引擎：对不同表类型的处理器</p>
+<p>默认:innoDB</p>
+<p>Engine = innoDB</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table (字段名 数据类型)engine = innoDB ;</span><br></pre></td></tr></table></figure>
+<p>让其识别中文字符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set names gbk ;</span><br></pre></td></tr></table></figure>
+<p>timestamp</p>
+<p>如果没有给定日期型</p>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="ic i-tag"></i> 数据库</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:25" itemprop="dateModified" datetime="2022-05-26T17:10:25+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="MySQL学习笔记(2)">http://xenolies.github.io/2022/03/10/mysql学习笔记2/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/03/07/%E4%B8%96%E7%BA%AA%E8%8B%B1%E8%AF%ADcentury-english%E5%BF%85%E8%83%8C%E8%AF%8D%E8%AF%8D%E7%BB%84/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclil3m4ej20zk0m8tn8.jpg" title="世纪英语(Century English)必背词&amp;词组(整理中)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 杂项</span>
+  <h3>世纪英语(Century English)必背词&词组(整理中)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyvx1d4j20zk0m8hdt.jpg" title="JAVA学习笔记(2)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(2)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text"> MySQL 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 数据库基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 创建数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 查看数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 使用数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 修改数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 删除数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 数据库的一些其他指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据表基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 整型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 浮点型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#blob-%E5%92%8Ctext%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> blob 和 text 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.5.</span> <span class="toc-text"> 时间和日期类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 创建数据表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 查看数据表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 查找数据表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%97"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 查看数据表的列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%8A%B6%E5%86%B5"><span class="toc-number">1.2.3.3.</span> <span class="toc-text"> 查看数据表状况</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.3.4.</span> <span class="toc-text"> 查看表的定义语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.3.5.</span> <span class="toc-text"> 查看表的结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%8C%87%E5%AE%9A%E6%9D%A1%E9%85%8D%E4%BB%B6%E6%9D%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.2.3.6.</span> <span class="toc-text"> 根据指定条配件来查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 修改数据表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%AD%97%E6%AE%B5"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 添加新字段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%BB%98%E8%AE%A4%E5%80%BC%E5%92%8C%E5%88%A0%E9%99%A4%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 添加默认值和删除默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="toc-number">1.2.4.3.</span> <span class="toc-text"> 修改字段名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.4.4.</span> <span class="toc-text"> 修改字段定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%97%E6%AE%B5"><span class="toc-number">1.2.4.5.</span> <span class="toc-text"> 删除字段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E8%A1%A8%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">1.2.4.6.</span> <span class="toc-text"> 为表重命名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E5%AD%97%E6%AE%B5%E5%A2%9E%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.4.7.</span> <span class="toc-text"> 为字段增加内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#update%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.4.8.</span> <span class="toc-text"> update 修改表的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%89%E6%9D%A1%E4%BB%B6%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.4.9.</span> <span class="toc-text"> 按条件删除数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 复制数据表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 删除数据表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 其他</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></li><li class="active"><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></li><li><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></li><li><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" rel="bookmark" title="MySQL学习笔记(4)（更新中）">MySQL学习笔记(4)（更新中）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/03/07/%E4%B8%96%E7%BA%AA%E8%8B%B1%E8%AF%ADcentury-english%E5%BF%85%E8%83%8C%E8%AF%8D%E8%AF%8D%E7%BB%84/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="享受探索的乐趣(《马里奥3D大陆》关卡设计分析)">享受探索的乐趣(《马里奥3D大陆》关卡设计分析)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" title="JAVA学习笔记7">JAVA学习笔记7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/03/07/%E4%B8%96%E7%BA%AA%E8%8B%B1%E8%AF%ADcentury-english%E5%BF%85%E8%83%8C%E8%AF%8D%E8%AF%8D%E7%BB%84/" title="世纪英语(Century English)必背词&amp;词组(整理中)">世纪英语(Century English)必背词&词组(整理中)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="MySQL学习笔记(4)（更新中）">MySQL学习笔记(4)（更新中）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/08/%E5%90%8D%E5%AE%B6%E6%9D%82%E6%96%87%E3%80%8A%E9%9D%92%E5%B9%B4%E4%BA%BA%E7%9A%84%E9%98%85%E8%AF%BB%E3%80%8B/" title="名家杂文《青年人的阅读》">名家杂文《青年人的阅读》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Python/" title="In Python">Python</a>
+</div>
+
+    <span><a href="/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" title="Pyinstaller的简单安装使用">Pyinstaller的简单安装使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/10/mysql学习笔记2/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

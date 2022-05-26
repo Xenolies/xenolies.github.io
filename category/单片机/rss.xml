@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;单片机&#34; category</title>
+        <link>http://xenolies.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Sat, 12 Feb 2022 16:57:17 +0800</pubDate>
+        <lastBuildDate>Sat, 12 Feb 2022 16:57:17 +0800</lastBuildDate>
+        <category>笔记</category>
+        <category>单片机</category>
+        <category>JAVA</category>
+        <category>编程</category>
+        <category>爬虫</category>
+        <category>MySQL</category>
+        <category>数据库</category>
+        <category>Python</category>
+        <category>网站</category>
+        <category>Wordpress</category>
+        <category>英语学习</category>
+        <category>心得体会</category>
+        <category>游戏设计</category>
+        <category>杂项</category>
+        <item>
+            <guid isPermalink="true">http://xenolies.github.io/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+            <title>ESP32制作小电视学习笔记</title>
+            <link>http://xenolies.github.io/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+            <category>单片机</category>
+            <pubDate>Sat, 12 Feb 2022 16:57:17 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;假期闲来无事，与其虚度，不如做点事干 你信吗？我不信 (￣ε(#￣)☆╰╮o (￣皿￣///)。于是就买了个开发板，正好借此学一学 C 语言。&lt;/p&gt;
+&lt;p&gt;于是，就立马买了需要的东西，清单如下：&lt;/p&gt;
+&lt;p&gt;物品&lt;/p&gt;
+&lt;p&gt;价格（元）&lt;/p&gt;
+&lt;p&gt;数量&lt;/p&gt;
+&lt;p&gt;备注&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGVtLnRhb2Jhby5jb20vaXRlbS5odG0/c3BtPWExejA5LjIuMC4wLjQxMzIyZThkdjNUTHZCJmFtcDtpZD01NDQ4MzEwMjM3MTAmYW1wO191PXYyMGFyYjE5a21mNTI5&#34;&gt;Esp32 DevKit v1 30pin 开发板&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;21.5&lt;/p&gt;
+&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;有 36pin 的版本&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGVtLnRhb2Jhby5jb20vaXRlbS5odG0/c3BtPWExejA5LjIuMC4wLjQxMzIyZThkdjNUTHZCJmFtcDtpZD01NTgxODI3NjE5NTgmYW1wO191PXYyMGFyYjE5a20yYTQ1&#34;&gt;40P 彩排杜邦线&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;2.81&lt;/p&gt;
+&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;母对母&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGVtLnRhb2Jhby5jb20vaXRlbS5odG0/c3BtPWExejA5LjIuMC4wLjQxMzIyZThkdjNUTHZCJmFtcDtpZD01NzE0MDk5NTc2MjImYW1wO191PXYyMGFyYjE5a202Nzc5&#34;&gt;1.8 寸 彩色 TFT 屏幕&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;20&lt;/p&gt;
+&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;不带触摸&lt;/p&gt;
+&lt;p&gt;开发板连接线&lt;/p&gt;
+&lt;p&gt;0&lt;/p&gt;
+&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;家里找的&lt;/p&gt;
+&lt;p&gt;物品清单&lt;/p&gt;
+&lt;p&gt;[buy] 我买的屏幕型号是 MSP1803，需要连接背光才能显示 [/buy]&lt;/p&gt;
+&lt;p&gt;一共 44.31 块，还行吧。&lt;/p&gt;
+&lt;p&gt;之后就找了个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUM1NHkxRTcyZT9zaGFyZV9zb3VyY2U9Y29weV93ZWI=&#34;&gt;做小电视的视频&lt;/span&gt;就开始学了。&lt;/p&gt;
+&lt;p&gt;然后我懵了，我没学过单片机，大一只学过 Python 和 HTML 入门，我看不懂商家给的资料，也看不懂&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjcwODc1NTY0P3NwbV9pZF9mcm9tPTMzMy43ODguYl83NjVmNzU3MDY5NmU2NjZmLjI=&#34;&gt; UP&lt;/span&gt; 给的教程。&lt;/p&gt;
+&lt;p&gt;然后鼓捣了好久。玩了好久，才想起来有个单片机。&lt;/p&gt;
+&lt;p&gt;现在才整的有些样子，现在基本完成了，那么我就把我一路上踩过的坑说一下。&lt;/p&gt;
+&lt;h3 id=&#34;获取chip-id报错&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#获取chip-id报错&#34;&gt;#&lt;/a&gt; 获取 Chip ID 报错&lt;/h3&gt;
+&lt;p&gt;报错显示 “exec: ‘cmd’: executable file not found in % PATH% 为开发板 ESP32 Dev Module 编译时出错。”&lt;/p&gt;
+&lt;p&gt;提示没有配置环境变量，配置完成，问题解决。&lt;/p&gt;
+&lt;h2 id=&#34;屏幕显示问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#屏幕显示问题&#34;&gt;#&lt;/a&gt; 屏幕显示问题&lt;/h2&gt;
+&lt;h3 id=&#34;屏幕不显示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#屏幕不显示&#34;&gt;#&lt;/a&gt; 屏幕不显示&lt;/h3&gt;
+&lt;p&gt;检查自己的屏幕，教程里面是不接背光的，可以烧录进去，然后接背光试试。我今天 (2022.2.12) 才发现我的屏幕是一定要接背光的，我还搞了好久。&lt;/p&gt;
+&lt;h3 id=&#34;图片显示不正常且有小部分花屏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图片显示不正常且有小部分花屏&#34;&gt;#&lt;/a&gt; 图片显示不正常，且有小部分花屏&lt;/h3&gt;
+&lt;p&gt;有的人可能烧录进去以后发现屏幕是这个样子：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/IMG20220212145658-768x1024.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;图片显示非常不正常，还有花屏的情况。&lt;/p&gt;
+&lt;p&gt;根据这个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDM3MDYyL2FydGljbGUvZGV0YWlscy85OTMwOTk2Mg==&#34;&gt;帖子&lt;/span&gt;的说法，是设计问题，可以通过切换配置文件的参数解决 。解决方法来自这个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyOTYwNS9hcnRpY2xlL2RldGFpbHMvMTE3MjYzMDkx&#34;&gt;帖子&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;按照这样的路径（.\arduino\arduino-nightly\hardware\espressif\esp32\libraries\TFT_eSPI）打开 TFT_eSPI, 找到 User_Setup.h，打开。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-30.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到这样的地方，并且把原来的 #define ST7735_GREENTAB2 注释掉，把 #define ST7735_REDTAB 解除注释，就显示正常了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-02-12-163850-1024x382.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;[buy] 此方法选择的参数有可能其他屏幕无效，可以在几个参数切换试试看 [/buy]&lt;/p&gt;
+&lt;p&gt;然后重新烧录进去程序。&lt;/p&gt;
+&lt;p&gt;这样就显示正常了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/IMG20220212163348-768x1024.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;色彩显示错误&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#色彩显示错误&#34;&gt;#&lt;/a&gt; 色彩显示错误&lt;/h3&gt;
+&lt;p&gt;烧录进去了程序，有可能出现这样的情况：本该显示蓝色的地方显示了黄色。这是因为 UP 的程序里使用的是 BGR, 而你的屏幕是 RGB, 这样导致的色彩问题。&lt;/p&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;p&gt;按照这样的路径（.\arduino\arduino-nightly\hardware\espressif\esp32\libraries\TFT_eSPI）打开 TFT_eSPI, 找到 User_Setup.h，打开。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/image-30.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到 #define TFT_RGB_ORDER TFT_BGR 这样的一行，将其注释掉，启用上面的 define TFT_RGB_ORDER TFT_RGB。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-02-12-164705.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成以后就是这样子&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/02/IMG20220212162216-scaled-e1644656696916-768x1024.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;显示不全&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#显示不全&#34;&gt;#&lt;/a&gt; 显示不全&lt;/h3&gt;
+&lt;p&gt;UP 的代码烧录进去以后会发现有个问题，就是在天气页面，如果显示三个字的地名或者显示风向为 “东北风‘的时候会显示不全，这时候就要调整一下显示的位置：&lt;/p&gt;
+&lt;p&gt;我这里把调好的放在下面&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/*******************天气界面显示****************/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void show_weather(uint16_t fg,uint16_t bg)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.setSwapBytes(true);             //使图片颜色由RGB-&amp;gt;BGR&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.pushImage(0, 0,  64, 64, weather[ph]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showMyFonts(75, 25, now_address.c_str(), TFT_WHITE);//因为图片大小的限制，如果是四个字的地名的话需要调整图片大小，还有本行调小X轴数值（数字75所在的位置）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showMyFonts(75, 45, now_wea, TFT_WHITE);//天气&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.pushImage(0 , 65, 30, 30, temIcon);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.pushImage(0, 95, 30, 30, humIcon);;//湿度&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.pushImage(50, 65, 30, 30, rainIcon);//雨&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tft.pushImage(45, 95, 30, 30, windIcon);//风&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showtext(25,75,1,1,fg,bg,now_high_tem + &amp;quot;/&amp;quot; + now_low_tem);//低温高温&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     showtext(25,75,1,1,fg,bg,now_high_tem + &amp;quot;/&amp;quot; + now_low_tem);//低温高温&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showtext(85,75,1,1,fg,bg,now_rainfall +&amp;quot;mm&amp;quot;);//降水量&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showtext(25,105,1,1,fg,bg,now_hum+&amp;quot;%&amp;quot;);//湿度&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    String now_wind = now_wind_direction + &amp;quot;风&amp;quot;;//什么风&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    showMyFonts(75, 100, now_wind.c_str(), TFT_WHITE);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    get_weather();// 再次运行获取天气的函数，保证天气更新&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;接线问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接线问题&#34;&gt;#&lt;/a&gt; 接线问题&lt;/h2&gt;
+&lt;p&gt;A0 接那里？&lt;/p&gt;
+&lt;p&gt;可以接到 DC 的引脚那里，性质相同 数据选择功能&lt;/p&gt;
+&lt;p&gt;其他的引脚接哪里？以我的为例。&lt;/p&gt;
+&lt;p&gt;屏幕引脚标注&lt;/p&gt;
+&lt;p&gt;开发板引脚标注&lt;/p&gt;
+&lt;p&gt;功能&lt;/p&gt;
+&lt;p&gt;VCC&lt;/p&gt;
+&lt;p&gt;VIN&lt;/p&gt;
+&lt;p&gt;电源正极&lt;/p&gt;
+&lt;p&gt;GND&lt;/p&gt;
+&lt;p&gt;GND&lt;/p&gt;
+&lt;p&gt;电源地&lt;/p&gt;
+&lt;p&gt;CS&lt;/p&gt;
+&lt;p&gt;D27&lt;/p&gt;
+&lt;p&gt;片选信号&lt;/p&gt;
+&lt;p&gt;RESET&lt;/p&gt;
+&lt;p&gt;D26&lt;/p&gt;
+&lt;p&gt;复位信号&lt;/p&gt;
+&lt;p&gt;A0(DC)&lt;/p&gt;
+&lt;p&gt;D25&lt;/p&gt;
+&lt;p&gt;寄存器 /&lt;br&gt;
+ 数据选择信号&lt;/p&gt;
+&lt;p&gt;SDA&lt;/p&gt;
+&lt;p&gt;D23&lt;/p&gt;
+&lt;p&gt;SPI 总线写数据信号&lt;/p&gt;
+&lt;p&gt;SCK&lt;/p&gt;
+&lt;p&gt;D18&lt;/p&gt;
+&lt;p&gt;SPI 总线时钟信号&lt;/p&gt;
+&lt;p&gt;LED&lt;/p&gt;
+&lt;p&gt;3V3&lt;/p&gt;
+&lt;p&gt;背光&lt;br&gt;
+（无需控制接 3V3）&lt;/p&gt;
+&lt;p&gt;引脚连接 + 功能&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他&#34;&gt;#&lt;/a&gt; 其他&lt;/h2&gt;
+&lt;p&gt;1.8 寸的 TFT 屏幕，型号是 MSP1803 的相关的资料：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5sY2R3aWtpLmNvbS9yZXMvTVNQMTgwMy8xLjhpbmNoX1NQSV9Nb2R1bGVfTVNQMTgwM19Vc2VyX01hbnVhbF9DTi5wZGY=&#34;&gt;http://www.lcdwiki.com/res/MSP1803/1.8inch_SPI_Module_MSP1803_User_Manual_CN.pdf&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;30 引脚的 DOIT Esp32 Dev Kit v1 开发板的引脚图，可以参考下：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZWxlY3Ryb25pY3NodWIub3JnL2VzcDMyLXBpbm91dC8=&#34;&gt;https://www.electronicshub.org/esp32-pinout/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Esp32 DevKit v1 的 30 引脚和 36 引脚的对比：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNzQ5MDMy&#34;&gt;https://cloud.tencent.com/developer/article/1749032&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

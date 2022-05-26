@@ -1,0 +1,606 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,JAVA,爬虫" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/">
+
+
+
+  <title>
+JAVA爬虫项目学习笔记（Maven框架） - JAVA |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">JAVA爬虫项目学习笔记（Maven框架）
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-05-10 14:22:21">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-05-10T14:22:21+08:00">2022-05-10</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/JAVA/" itemprop="item" rel="index" title="In JAVA"><span itemprop="name">JAVA</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="项目介绍"><a class="markdownIt-Anchor" href="#项目介绍">#</a> 项目介绍</h2>
+<p>项目要求：</p>
+<p>使用 JAVA 制作爬虫，操作 API 爬取网页的信息，保存到本地。</p>
+<h2 id="实现原理"><a class="markdownIt-Anchor" href="#实现原理">#</a> 实现原理</h2>
+<p>使用 Jsoup 解析 HTML，获取网站源代码，通过解析 HTML 获取需要的数据，并保存本地。</p>
+<h2 id="maven框架"><a class="markdownIt-Anchor" href="#maven框架">#</a> Maven 框架</h2>
+<h3 id="maven配置"><a class="markdownIt-Anchor" href="#maven配置">#</a> Maven 配置</h3>
+<h4 id="配置maven环境"><a class="markdownIt-Anchor" href="#配置maven环境">#</a> 配置 Maven 环境</h4>
+<p>首先要去下载 Maven，这里是在 Maven 的下载地址: <span class="exturl" data-url="aHR0cHM6Ly9tYXZlbi5hcGFjaGUub3JnL2Rvd25sb2FkLmNnaQ==">Maven – Download Apache Maven</span>, 然后解压到你想要的地方，然后打开 bin 文件夹，复制路径</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_path.png" alt=""></p>
+<p>然后配置环境变量（MAVEN_HOME 和 Path 都设置成你安装目录下的 bin 目录 ）。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_path1.png" alt=""></p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_path2.png" alt=""></p>
+<p>然后 Windows + R 输入 CMD, 接着输入  <code>mvn -v</code>  来看看是否配置成功环境变量。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_path3-1024x145.png" alt=""></p>
+<p>如果输出版本，就说明配置成功。</p>
+<h4 id="配置maven设置"><a class="markdownIt-Anchor" href="#配置maven设置">#</a> 配置 Maven 设置</h4>
+<p>紧接着要开始设置 Maven 了</p>
+<p>首先打开 conf 文件夹，打开 settings.xml</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_setting.png" alt=""></p>
+<p>找到  <code>&lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</code>  这句，复制出来，中间的  <code>`/path/to/local/repo`</code>  这句是定义自己想要的 Jar 包的位置，选择自己想要的位置</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_setting1.png" alt=""></p>
+<p>然后配置 Jar 包下载的镜像。找到里面的  <code>&lt;mirror&gt;</code>  标签，然后改为阿里云的镜像</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_setting2.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--阿里云镜像--&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">      &lt;id&gt;nexus-aliyun&lt;/id&gt;</span><br><span class="line">      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">      &lt;name&gt;Nexus aliyun&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+<p>然后保存，Maven 设置完成。</p>
+<h4 id="idja上的maven设置"><a class="markdownIt-Anchor" href="#idja上的maven设置">#</a> IDJA 上的 Maven 设置</h4>
+<p>打开 IDJA ，点击 “文件”, 进入 &quot;新项目设置&quot;。（英文版为：点击 File ，进入 Other Settings Of New Project \New Project Settings）</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_IDJA.png" alt=""></p>
+<p>搜索 Maven (英文版同理)。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_IDJA1.png" alt=""></p>
+<p>在” 用户设置文件 “导入之前在 Setting.xml 的设置，在 “本地仓库 &quot; 选择之前在 Setting.xml 中设置的 Jar 的路径，“Maven 主路径” 选择 conf 的上一级文件夹。（英文对照: “Maven 主路径” : Maven home directopry ，“用户设置文件” : User settings file，“本地仓库” : Local repository）</p>
+<p>导入 Setting.xml 后 &quot;本地仓库 (Local repository)&quot; 和’用户设置文件 (User settings file)“后面的 &quot; 重写”(Override) 记得勾选</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_IDJA2-1024x800.png" alt=""></p>
+<p>然后点击 &quot;应用&quot;(Apply)。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_IDJA3-1024x362.png" alt=""></p>
+<p>IDJA 的 Maven 设置成功 o (〃＾▽＾〃) o</p>
+<h3 id="maven目录结构"><a class="markdownIt-Anchor" href="#maven目录结构">#</a> Maven 目录结构</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Maven1//Maven项目名</span><br><span class="line">    └─src</span><br><span class="line">        ├─main</span><br><span class="line">        │  ├─java</span><br><span class="line">        │  └─resources</span><br><span class="line">        └─test</span><br><span class="line">            ├─java</span><br><span class="line">            └─resources</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Windows 系统显示文件目录树</li>
+</ul>
+<p>在 CMD 窗口下输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tree + [查看目录树的地址]</span><br></pre></td></tr></table></figure>
+<p>就可显示了</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-05-15-111235.png" alt=""></p>
+<p>Maven 仓库依赖</p>
+<p>点击<span class="exturl" data-url="aHR0cHM6Ly9tdm5yZXBvc2l0b3J5LmNvbS8=">此链接</span>进入<span class="exturl" data-url="aHR0cHM6Ly9tdm5yZXBvc2l0b3J5LmNvbS8="> Maven 仓库</span>，点击选择需要的 API 版本，点击在需要的 API 找到 Maven 点击即可复制。</p>
+<h3 id="cmd编译和运行maven项目"><a class="markdownIt-Anchor" href="#cmd编译和运行maven项目">#</a> CMD 编译和运行 Maven 项目</h3>
+<p>cmd 找到项目的根目录，找到 maven 项目的根目录，在地址框输入 cmd，回车（或者 win + R, 输入 cmd 打开 cmd 窗口然后  <code>cd maven项目路径</code>  ）, 在弹出的 cmd 窗口中输入  <code>mvn compile</code>  编译。输出 “BUILD SUCCESS” 说明编译成功。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_cmd_build1-1024x483.png" alt=""></p>
+<p>我们看到了出现了这样的提示：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_cmd_build2-1024x90.png" alt=""></p>
+<p>是因为编码设置的不正确，这时候要打开项目的 pom.xml 文件，在 <code>&lt;properties&gt;</code>  里加入下面这句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br></pre></td></tr></table></figure>
+<p>然后再运行 <code>mvn compile</code>  就不报错啦。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_cmd_build3-1024x467.png" alt=""></p>
+<p>运行 Maven 项目</p>
+<p>写一个 JAVA 程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;Hello,Maven!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在当前 Cmd 窗口下输入  <code>mvn exec:java -Dexec.mainClass=&quot;PC&quot;</code>  就可以运行在 main 问减价下的 Main 类中的 Main 方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -Dexec.mainClass=&quot;PC&quot;  </span><br><span class="line">//注意: PC是我自己写的JAVA类名，-Dexec.mainClass会让Maven从项目目录的main文件夹开始</span><br><span class="line">mvn exec:java -Dexec.mainClass=&quot;&quot; </span><br></pre></td></tr></table></figure>
+<p>编译完成输出结果：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/maven_cmd_build4.png" alt=""></p>
+<h2 id="java爬虫"><a class="markdownIt-Anchor" href="#java爬虫">#</a> JAVA 爬虫</h2>
+<p>配置到 Maven 框架，就可以愉快的编写 JAVA 爬虫了。</p>
+<p>爬虫 ： 按照一定的规则，自动地抓取万维网信息的程序或者脚本</p>
+<h3 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置">#</a> 环境配置</h3>
+<p>前提：</p>
+<p>IntelliJ IDEA</p>
+<p>Maven 框架</p>
+<p>JDK 1.8</p>
+<h4 id="安装需要的jar包"><a class="markdownIt-Anchor" href="#安装需要的jar包">#</a> 安装需要的 Jar 包</h4>
+<p><strong>以下的所有 Jar 包均可再 Maven 仓库 <span class="exturl" data-url="aHR0cHM6Ly9tdm5yZXBvc2l0b3J5LmNvbS8=">https://mvnrepository.com/</span> 下载</strong></p>
+<p>接着要安装 Jsoup 包，用于解析 HTML 并查找 (均放在 <code>&lt;dependencies&gt;&lt;/dependencies&gt;</code>  标签中 )</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.14.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>还有 SLF4J 包，用来记录日志。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.7.25&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>Commons-io, 常用的工具类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;commons-io&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;commons-io&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.11.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>以及处理字符串的 common-lang3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.12.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="配置slf4j"><a class="markdownIt-Anchor" href="#配置slf4j">#</a> 配置 SLF4J</h4>
+<p>在 resources 下创建一个 SLF4J 配置文件，名为  <code>log4j.properties</code></p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/PaChong_Start1-1024x510.png" alt=""></p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/PaChong_Start2.png" alt=""></p>
+<p>写入配置代码：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/PaChong_Start3-1024x230.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootLogger=DEBUG,A1</span><br><span class="line">log4j.logger.cn.itcast = DEBUG</span><br><span class="line">log4j.appender.A1=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.A1.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.A1.layout.ConversionPattern=%-d&#123;yyyy-MM-dd HH:mm:ss, SSS&#125; [%t] [%c]-[%p] %m%n</span><br></pre></td></tr></table></figure>
+<p>至此 Java 的环境配置完成。</p>
+<h3 id="java爬虫编写"><a class="markdownIt-Anchor" href="#java爬虫编写">#</a> JAVA 爬虫编写</h3>
+<h4 id="使用-jsoup-实现爬取文章封面"><a class="markdownIt-Anchor" href="#使用-jsoup-实现爬取文章封面">#</a> 使用 Jsoup 实现爬取文章封面</h4>
+<p>分析源代码，找出封面位置，是在 <code>&lt;div class=&quot;cover&quot;&gt;</code>  中的 <code>&lt;img&gt;</code>  标签的 <code>data-src</code>  属性</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/Maven_HTML-1024x96.png" alt=""></p>
+<p>接下来的操作，将围绕这个 <code>&lt;div&gt;</code>  框和里面的 <code>&lt;img&gt;</code>  标签展开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">import org.jsoup.Connection;</span><br><span class="line">import org.jsoup.Jsoup;</span><br><span class="line">import org.jsoup.nodes.Document;</span><br><span class="line">import org.jsoup.nodes.Element;</span><br><span class="line">import org.jsoup.select.Elements;</span><br><span class="line">import org.apache.commons.io.*;</span><br><span class="line">import java.io.*;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.net.URLConnection;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException&#123;</span><br><span class="line">        /*获取HTML*/</span><br><span class="line">        //String Url = &quot;https://xenolies.xyz/&quot;;  //爬取网站2</span><br><span class="line">        String Url = &quot;https://xenolies.github.io/&quot;;//需要爬取的网站URL</span><br><span class="line">        //使用Jsoup.connect()方法链接Url,获取HTML文件</span><br><span class="line">Connection connection =  Jsoup.connect(Url);</span><br><span class="line">        //设置延时，避免出现Connection reset错误</span><br><span class="line">        connection.timeout(3000); </span><br><span class="line">        //使用Get(),解析HTML，使用Document来接受返回的信息</span><br><span class="line">        Document document = connection.get();  </span><br><span class="line"></span><br><span class="line">        /*使用各种选择器来解析获取获取到的HTML*/ </span><br><span class="line">        //使用Class选择元素，获取所有名为cover的元素</span><br><span class="line">        Elements cover = document.getElementsByClass(&quot;cover&quot;); </span><br><span class="line">        //创建list来保存爬出的图片URL</span><br><span class="line">        String[] UrlList = new String[cover.size()];  </span><br><span class="line">        //for循环持续爬取图片,.size()获取循环次数</span><br><span class="line">        for (int Time = 0;Time &lt; cover.size();Time++)&#123; </span><br><span class="line">            /*从获取的元素中获取数据*/</span><br><span class="line">            //获取属性值</span><br><span class="line">            //获取cover中的包含&lt;img&gt;标签的第几个&lt;div&gt;(数组排列)</span><br><span class="line">            Element div = cover.get(Time);</span><br><span class="line">            Elements imgUrl = div.getElementsByTag(&quot;img&quot;);  //获取到&lt;img标签&gt;</span><br><span class="line">            String ImgUrl = imgUrl.attr(&quot;data-src&quot;);</span><br><span class="line">            System.out.println(&quot;第&quot; + (Time+1) + &quot;张图片&quot;);</span><br><span class="line">            UrlList[Time] = ImgUrl;  //将单个的图片地址添加进数组</span><br><span class="line">        &#125;</span><br><span class="line">        String filePath = &quot;C:\\Users\\35367\\Desktop\\Webps&quot; ;  //图片保存的位置</span><br><span class="line"></span><br><span class="line">        for (int i = 0;i &lt; cover.size();i++)&#123;  //遍历,下载</span><br><span class="line">            File dir = new File(filePath);</span><br><span class="line">            //substring()方法来截取字符串，lastIndexOf()来截取最后一个 &quot;/&quot;出现时候的位置（要+1来跳过）</span><br><span class="line">            String fileName = UrlList[i].substring(UrlList[i].lastIndexOf(&quot;/&quot;) + 1,UrlList[i].length());</span><br><span class="line">            //File.separator为分隔符，在什么系统使用法对应的分隔符，用于保存</span><br><span class="line">            File file = new File(filePath + File.separator + fileName);  //输出的路径</span><br><span class="line"></span><br><span class="line">            Connection connectionIMG = Jsoup.connect(UrlList[i]);  //建立新的connection</span><br><span class="line">            URL url =new URL(UrlList[i]);  //new成为Url以便后面使用</span><br><span class="line">            URLConnection ConnectionIMG = url.openConnection();  </span><br><span class="line">            InputStream in = ConnectionIMG.getInputStream();</span><br><span class="line">            OutputStream out = new BufferedOutputStream(new FileOutputStream(file));</span><br><span class="line"></span><br><span class="line">            byte[] buf = new byte[1024];</span><br><span class="line">            int len = -1;</span><br><span class="line"></span><br><span class="line">            while ((len = in.read(buf)) != -1) &#123;</span><br><span class="line">                out.write(buf, 0, len);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>爬取结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/BXBEELFKTPOELV_SSY-1024x573.jpg" alt=""></p>
+<h4 id="jsoup-hssfworkbook-爬取生成表格"><a class="markdownIt-Anchor" href="#jsoup-hssfworkbook-爬取生成表格">#</a> Jsoup + HSSFWorkbook 爬取，生成表格</h4>
+<p>这次爬取的网页时 LR2 的段位表</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/LR2_IR-1024x469.png" alt=""></p>
+<p>F12 打开控制台，查看源代码，</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/LR2_IR1-1024x476.png" alt=""></p>
+<p>发现我们要找的东西在  <code>&lt;tr&gt;</code>  框的  <code>&lt;th&gt;</code>  标签和  <code>&lt;td&gt;标签</code> 里面，单纯的提取  <code>&lt;tr&gt;</code>  会导致混乱，所以要加入一个判断。</p>
+<p>因为段位表是表格，所以我们要引入一个新的 Jar 包 Poi , 来制作导出表格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;poi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>使用教程可以参考这个 ：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kZDFlNGYyODc1N2I=">使用 HSSFWorkbook 导出、操作 excell</span></p>
+<p>代码如下 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.poi.hssf.usermodel.*;</span><br><span class="line">import org.jsoup.Connection;</span><br><span class="line">import org.jsoup.Jsoup ;</span><br><span class="line">import org.jsoup.nodes.Document;</span><br><span class="line">import org.jsoup.nodes.Element;</span><br><span class="line">import org.jsoup.select.Elements;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        //确认爬取的HTML网页,</span><br><span class="line">        String url = &quot;http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=gradelist&quot;;</span><br><span class="line">        //链接网页</span><br><span class="line">        Connection connection = Jsoup.connect(url);</span><br><span class="line"></span><br><span class="line">        //获取网站源代码</span><br><span class="line">        Document document = connection.get();</span><br><span class="line"></span><br><span class="line">        SPRank(document);</span><br><span class="line">        DPRank(document);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void SPRank(Document document) throws IOException &#123;</span><br><span class="line"></span><br><span class="line">        Elements Table = document.getElementsByTag(&quot;table&quot;);</span><br><span class="line">        Element table = Table.get(0);</span><br><span class="line"></span><br><span class="line">        Elements Tr = table.getElementsByTag(&quot;tr&quot;);</span><br><span class="line">        //System.out.println(Tr);</span><br><span class="line">        Elements H3 = document.getElementsByTag(&quot;h3&quot;);</span><br><span class="line">        //System.out.println(H3);</span><br><span class="line">        String h31 = H3.get(0).text();  //SP段位名</span><br><span class="line"></span><br><span class="line">        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();  //创建Excal表</span><br><span class="line">        HSSFSheet hssfSheetSP = hssfWorkbook.createSheet(h31);  //创建名为 :&quot;段位認定　シングル(2018) &quot; Excel</span><br><span class="line">        //设置单元格宽度</span><br><span class="line">        hssfSheetSP .setColumnWidth(1, 8000);</span><br><span class="line">        HSSFCellStyle cellStyle= hssfWorkbook.createCellStyle();</span><br><span class="line">        //设置水平对齐的样式为居中对齐;</span><br><span class="line">        cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);</span><br><span class="line"></span><br><span class="line">        //设置字体</span><br><span class="line">        HSSFFont font = hssfWorkbook.createFont();</span><br><span class="line">        font.setFontName(&quot;黑体&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        int Th1 = 0;  //列数</span><br><span class="line">        int Tr1 = Tr.size();  //行数</span><br><span class="line"></span><br><span class="line">        String star = &quot;&quot;;  //小段位星级</span><br><span class="line">        String gradename = &quot;&quot;;  //小段位名</span><br><span class="line">        String crossnum = &quot;&quot;;  //小合格人数</span><br><span class="line">        String challengesnum = &quot;&quot;;  //小挑战人数</span><br><span class="line">        String yield = &quot;&quot;;  //小合格率</span><br><span class="line"></span><br><span class="line">        String Star = &quot;&quot;;  //段位星级</span><br><span class="line">        String GradeName = &quot;&quot;;  //段位名</span><br><span class="line">        String CrossNum = &quot;&quot;;  //合格人数</span><br><span class="line">        String ChallengesNum = &quot;&quot;;  //挑战人数</span><br><span class="line">        String Yield = &quot;&quot;;  //合格率</span><br><span class="line"></span><br><span class="line">        for (int Tri = 0; Tri &lt; Tr.size(); Tri++) &#123;</span><br><span class="line">            Element TrTitle = Tr.get(Tri);  //第几个Tr框</span><br><span class="line">            Elements Td = TrTitle.getElementsByTag(&quot;td&quot;);  //合格率等标题 : &lt;th&gt; 其他的时 : &lt;td&gt;</span><br><span class="line">            Elements Th = TrTitle.getElementsByTag(&quot;th&quot;);</span><br><span class="line">            HSSFRow hssfRow = hssfSheetSP.createRow(Tri);  //在对应的行中填入数据，定位行</span><br><span class="line">            HSSFCell cell1 = hssfRow.createCell(0);  //第rowi行第一个单元格</span><br><span class="line">            HSSFCell cell2 = hssfRow.createCell(1);</span><br><span class="line">            HSSFCell cell3 = hssfRow.createCell(2);</span><br><span class="line">            HSSFCell cell4 = hssfRow.createCell(3);</span><br><span class="line">            HSSFCell cell5 = hssfRow.createCell(4);</span><br><span class="line"></span><br><span class="line">            if (Td.size() == 0) &#123;  //获取小段位内容</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                star = Td.get(0).text();</span><br><span class="line">                gradename = Td.get(1).text();</span><br><span class="line">                crossnum = Td.get(2).text();</span><br><span class="line">                challengesnum = Td.get(3).text();</span><br><span class="line">                yield = Td.get(4).text();</span><br><span class="line">                cell1.setCellValue(star);</span><br><span class="line">                cell2.setCellValue(gradename);</span><br><span class="line">                cell3.setCellValue(crossnum);</span><br><span class="line">                cell4.setCellValue(challengesnum);</span><br><span class="line">                cell5.setCellValue(yield);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (Th.size() == 0) &#123;  //获取段位表内容</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                Th1 = Th.size();  //获取列数</span><br><span class="line">                Star = Th.get(0).text();</span><br><span class="line">                GradeName = Th.get(1).text();</span><br><span class="line">                CrossNum = Th.get(2).text();</span><br><span class="line">                ChallengesNum = Th.get(3).text();</span><br><span class="line">                Yield = Th.get(4).text();</span><br><span class="line">                cell1.setCellValue(Star);</span><br><span class="line">                cell2.setCellValue(GradeName);</span><br><span class="line">                cell3.setCellValue(CrossNum);</span><br><span class="line">                cell4.setCellValue(ChallengesNum);</span><br><span class="line">                cell5.setCellValue(Yield);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            //表名  : 段位認定　シングル(2018) (h31)</span><br><span class="line">            //项目名 : 1.星级 Star 2.段位名 GradeName 3.合格人数 CrossNum 4.挑战人数 ChallengesNum 5.通过率 Yield</span><br><span class="line">            //行数: Tr1 , 列数 : Th1</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        FileOutputStream fos = new FileOutputStream(&quot;C:\\Users\\35367\\Desktop\\LR2(SP).xls&quot;);  //IO流写入</span><br><span class="line">        hssfWorkbook.write(fos);</span><br><span class="line">        fos.close();</span><br><span class="line">        System.out.println(&quot;SPRank创建成功&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void DPRank(Document document) throws IOException&#123;</span><br><span class="line"></span><br><span class="line">        Elements Table = document.getElementsByTag(&quot;table&quot;);</span><br><span class="line">        Element table = Table.get(1);</span><br><span class="line"></span><br><span class="line">        Elements Tr = table.getElementsByTag(&quot;tr&quot;);</span><br><span class="line">        //System.out.println(Tr);</span><br><span class="line">        Elements H3 = document.getElementsByTag(&quot;h3&quot;);</span><br><span class="line">        //System.out.println(H3);</span><br><span class="line">        String h32 = H3.get(1).text();  //SP段位名</span><br><span class="line">        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();  //创建Excal表</span><br><span class="line">        HSSFSheet hssfSheetDP = hssfWorkbook.createSheet(h32);  //创建名为 :&quot;段位認定　DP(2018) &quot; Excel表</span><br><span class="line">        //设置单元格宽度</span><br><span class="line">        hssfSheetDP .setColumnWidth(1, 8400);</span><br><span class="line">        HSSFCellStyle cellStyle= hssfWorkbook.createCellStyle();</span><br><span class="line">        //设置水平对齐的样式为居中对齐;</span><br><span class="line">        cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);</span><br><span class="line"></span><br><span class="line">        //设置字体</span><br><span class="line">        HSSFFont font = hssfWorkbook.createFont();</span><br><span class="line">        font.setFontName(&quot;黑体&quot;);</span><br><span class="line">        int Th1 = 0;  //列数</span><br><span class="line">        int Tr1 = Tr.size();  //行数</span><br><span class="line"></span><br><span class="line">        String star = &quot;&quot;;  //小段位星级</span><br><span class="line">        String gradename = &quot;&quot;;  //小段位名</span><br><span class="line">        String crossnum = &quot;&quot;;  //小合格人数</span><br><span class="line">        String challengesnum = &quot;&quot;;  //小挑战人数</span><br><span class="line">        String yield = &quot;&quot;;  //小合格率</span><br><span class="line"></span><br><span class="line">        String Star = &quot;&quot;;  //段位星级</span><br><span class="line">        String GradeName = &quot;&quot;;  //段位名</span><br><span class="line">        String CrossNum = &quot;&quot;;  //合格人数</span><br><span class="line">        String ChallengesNum = &quot;&quot;;  //挑战人数</span><br><span class="line">        String Yield = &quot;&quot;;  //合格率</span><br><span class="line"></span><br><span class="line">        for (int Tri = 0; Tri &lt; Tr.size(); Tri++) &#123;</span><br><span class="line">            Element TrTitle = Tr.get(Tri);  //第几个Tr框</span><br><span class="line">            Elements Td = TrTitle.getElementsByTag(&quot;td&quot;);  //合格率等标题 : &lt;th&gt; 其他的时 : &lt;td&gt;</span><br><span class="line">            Elements Th = TrTitle.getElementsByTag(&quot;th&quot;);</span><br><span class="line">            HSSFRow hssfRow = hssfSheetDP.createRow(Tri);  //在对应的行中填入数据，定位行</span><br><span class="line">            HSSFCell cell1 = hssfRow.createCell(0);  //第rowi行第一个单元格</span><br><span class="line">            HSSFCell cell2 = hssfRow.createCell(1);</span><br><span class="line">            HSSFCell cell3 = hssfRow.createCell(2);</span><br><span class="line">            HSSFCell cell4 = hssfRow.createCell(3);</span><br><span class="line">            HSSFCell cell5 = hssfRow.createCell(4);</span><br><span class="line">            if (Td.size() == 0) &#123;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                star = Td.get(0).text();</span><br><span class="line">                gradename = Td.get(1).text();</span><br><span class="line">                crossnum = Td.get(2).text();</span><br><span class="line">                challengesnum = Td.get(3).text();</span><br><span class="line">                yield = Td.get(4).text();</span><br><span class="line">                cell1.setCellValue(star);</span><br><span class="line">                cell2.setCellValue(gradename);</span><br><span class="line">                cell3.setCellValue(crossnum);</span><br><span class="line">                cell4.setCellValue(challengesnum);</span><br><span class="line">                cell5.setCellValue(yield);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (Th.size() == 0) &#123;</span><br><span class="line">            &#125;else  &#123;</span><br><span class="line">                Th1 = Th.size();</span><br><span class="line">                Star = Th.get(0).text();</span><br><span class="line">                GradeName = Th.get(1).text();</span><br><span class="line">                CrossNum = Th.get(2).text();</span><br><span class="line">                ChallengesNum = Th.get(3).text();</span><br><span class="line">                Yield = Th.get(4).text();</span><br><span class="line">                cell1.setCellValue(Star);</span><br><span class="line">                cell2.setCellValue(GradeName);</span><br><span class="line">                cell3.setCellValue(CrossNum);</span><br><span class="line">                cell4.setCellValue(ChallengesNum);</span><br><span class="line">                cell5.setCellValue(Yield);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //表名  : 段位認定　シングル(2018) (h31)</span><br><span class="line">        //项目名 : 1.星级 Star 2.段位名 GradeName 3.合格人数 CrossNum 4.挑战人数 ChallengesNum 5.通过率 Yield</span><br><span class="line">        //行数: Tr1 , 列数 : Th1</span><br><span class="line">        FileOutputStream fos = new FileOutputStream(&quot;C:\\Users\\35367\\Desktop\\LR2(DP).xls&quot;);  //IO流写入</span><br><span class="line">        hssfWorkbook.write(fos);</span><br><span class="line">        fos.close();</span><br><span class="line">        System.out.println(&quot;DPRank创建成功&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/HSSF_Jsoup-1024x583.png" alt=""></p>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/JAVA/" rel="tag"><i class="ic i-tag"></i> JAVA</a>
+          <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"><i class="ic i-tag"></i> 爬虫</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-26 17:10:26" itemprop="dateModified" datetime="2022-05-26T17:10:26+08:00">2022-05-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" title="JAVA爬虫项目学习笔记（Maven框架）">http://xenolies.github.io/2022/05/10/java爬虫项目学习笔记maven/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli3sbvtj20zk0m8x6p.jpg" title="JAVA学习笔记(10)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(10)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljitigmj20zk0m87fp.jpg" title="JAVA学习笔记(11)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> JAVA</span>
+  <h3>JAVA学习笔记(11)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 项目介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text"> 实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maven%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text"> Maven 框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#maven%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text"> Maven 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 配置 Maven 环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEmaven%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 配置 Maven 设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#idja%E4%B8%8A%E7%9A%84maven%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.1.3.</span> <span class="toc-text"> IDJA 上的 Maven 设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maven%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">3.2.</span> <span class="toc-text"> Maven 目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cmd%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8Cmaven%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.3.</span> <span class="toc-text"> CMD 编译和运行 Maven 项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E7%88%AC%E8%99%AB"><span class="toc-number">4.</span> <span class="toc-text"> JAVA 爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text"> 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%9C%80%E8%A6%81%E7%9A%84jar%E5%8C%85"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 安装需要的 Jar 包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEslf4j"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 配置 SLF4J</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99"><span class="toc-number">4.2.</span> <span class="toc-text"> JAVA 爬虫编写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-jsoup-%E5%AE%9E%E7%8E%B0%E7%88%AC%E5%8F%96%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 使用 Jsoup 实现爬取文章封面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jsoup-hssfworkbook-%E7%88%AC%E5%8F%96%E7%94%9F%E6%88%90%E8%A1%A8%E6%A0%BC"><span class="toc-number">4.2.2.</span> <span class="toc-text"> Jsoup + HSSFWorkbook 爬取，生成表格</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></li><li><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></li><li><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="bookmark" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></li><li><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></li><li><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></li><li><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" rel="bookmark" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></li><li><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="JAVA学习笔记7">JAVA学习笔记7</a></li><li><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="bookmark" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></li><li><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="bookmark" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></li><li><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="bookmark" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></li><li class="active"><a href="/2022/05/10/java%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0maven/" rel="bookmark" title="JAVA爬虫项目学习笔记（Maven框架）">JAVA爬虫项目学习笔记（Maven框架）</a></li><li><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="bookmark" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">14</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="享受探索的乐趣(《马里奥3D大陆》关卡设计分析)">享受探索的乐趣(《马里奥3D大陆》关卡设计分析)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/MySQL/" title="In MySQL">MySQL</a>
+</div>
+
+    <span><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="MySQL学习笔记(4)（更新中）">MySQL学习笔记(4)（更新中）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" title="JAVA学习笔记(8)(整理中)">JAVA学习笔记(8)(整理中)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/" title="我的一些关卡设计心得">我的一些关卡设计心得</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/08/%E5%90%8D%E5%AE%B6%E6%9D%82%E6%96%87%E3%80%8A%E9%9D%92%E5%B9%B4%E4%BA%BA%E7%9A%84%E9%98%85%E8%AF%BB%E3%80%8B/" title="名家杂文《青年人的阅读》">名家杂文《青年人的阅读》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JAVA/" title="In JAVA">JAVA</a>
+</div>
+
+    <span><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/08/%E6%91%86%E8%84%B1%E7%AB%A5%E7%A8%9A%E7%8A%B6%E6%80%81/" title="名家杂文《摆脱童稚状态》">名家杂文《摆脱童稚状态》</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/05/10/java爬虫项目学习笔记maven/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

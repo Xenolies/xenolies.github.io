@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;游戏设计&#34; tag</title>
+        <link>http://xenolies.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Thu, 07 Apr 2022 14:55:06 +0800</pubDate>
+        <lastBuildDate>Thu, 07 Apr 2022 14:55:06 +0800</lastBuildDate>
+        <category>笔记</category>
+        <category>单片机</category>
+        <category>JAVA</category>
+        <category>编程</category>
+        <category>爬虫</category>
+        <category>MySQL</category>
+        <category>数据库</category>
+        <category>Python</category>
+        <category>网站</category>
+        <category>Wordpress</category>
+        <category>英语学习</category>
+        <category>心得体会</category>
+        <category>游戏设计</category>
+        <category>杂项</category>
+        <item>
+            <guid isPermalink="true">http://xenolies.github.io/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/</guid>
+            <title>享受探索的乐趣(《马里奥3D大陆》关卡设计分析)</title>
+            <link>http://xenolies.github.io/2022/04/07/%E4%BA%AB%E5%8F%97%E6%8E%A2%E7%B4%A2%E7%9A%84%E4%B9%90%E8%B6%A3%E3%80%8A%E9%A9%AC%E9%87%8C%E5%A5%A53d%E5%A4%A7%E9%99%86%E3%80%8B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/</link>
+            <category>心得体会</category>
+            <category>游戏设计</category>
+            <pubDate>Thu, 07 Apr 2022 14:55:06 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;引子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引子&#34;&gt;#&lt;/a&gt; 引子&lt;/h2&gt;
+&lt;p&gt;马里奥的游戏总是可以给人欢乐，而这样的欢乐却和其他的游戏大为相反，比起画面，马里奥往往给人新鲜感和单纯的乐趣。因此我就以马里奥 3D 大陆为基础，把马里奥的设计思路总结，做个了小总结。一共总结成为了三个方面：引导 (Guide)－－－&amp;gt; 认知 (Cognition)－－&amp;gt; 突破 (Breakthrough)（GCB 方法），这三个一直在指导玩家，让不同层次玩家能有着不同层次的游戏方法，以及舒适的游戏体验。&lt;/p&gt;
+&lt;p&gt;同时，也感谢 Indienova 中一篇文章的帮助，把我上一篇中提到的模糊概念讲的十分透彻，本文也是在这篇文章的启发下写出来的，同时也感谢译者，翻译的相当有水平，鄙人感激不尽。&lt;/p&gt;
+&lt;p&gt;相关链接&lt;/p&gt;
+&lt;p&gt;Indienova 文章链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbmRpZW5vdmEuY29tL2luZGllLWdhbWUtZGV2ZWxvcG1lbnQvaG93LXRvLWRlc2lnbi1sZXZlbHMtd2l0aC10aGUtc3VwZXItbWFyaW8td29ybGQtbWV0aG9kLWluLWNoaW5lc2Uv&#34;&gt;使用 “马里奥方法” 设计游戏关卡 indienova 独立游戏&lt;/span&gt;&lt;br&gt;
+所翻译的原文链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nYW1lZGV2ZWxvcG1lbnQudHV0c3BsdXMuY29tL2FydGljbGVzL2hvdy10by1kZXNpZ24tbGV2ZWxzLXdpdGgtdGhlLXN1cGVyLW1hcmlvLXdvcmxkLW1ldGhvZC0tY21zLTI1MTc3&#34;&gt;How to Design Levels With the “Super Mario World Method”&lt;/span&gt;&lt;br&gt;
+ 上一篇链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly94ZW5vbGllcy54eXovYXJjaGl2ZXMvMTEzNQ==&#34;&gt;我的一些关卡设计心得&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;我在上文中提到了 GCB 方法了，以下将用马里奥 3D 大陆世界 1 的第一关来说明。&lt;/p&gt;
+&lt;h2 id=&#34;合适的引导玩家&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#合适的引导玩家&#34;&gt;#&lt;/a&gt; 合适的引导玩家&lt;/h2&gt;
+&lt;p&gt;整个第一关，我将它分为三个部分。&lt;/p&gt;
+&lt;p&gt;第一个部分是引导&lt;/p&gt;
+&lt;p&gt;这里在马里奥第一个场景就有体现（由于实际机器无法录屏只好这样了）&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE97-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里设计了一大块空地给玩家自己探索，可以练习跳跃等操作。在这里，玩家可以去尝试在说明书中的各种操作。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://pic1.zhimg.com/0f47b318e2c935a878dfeba4c6c2b1ea_r.jpg?source=1940ef5c&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说明书的图来自这个知乎回答 ： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzIyNDIzMDkxL2Fuc3dlci8yMTMwNjU0MA==&#34;&gt;《超级马里奥兄弟》为什么可以不用新手引导？ - Leon Lee 的回答 - 知乎 、&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;这样的引导只是玩家的基础，而我这里提到的是后面的地方&lt;/p&gt;
+&lt;p&gt;在跳上一个坎后，碰到了一个写着问号的方块。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE99-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这时候，很可能有玩家会跳一下，顶这个方块，这时候方块蹦出一个金币。这时候玩家会知道，带问号的黄色方块有好东西。这样一个引导完成了。&lt;/p&gt;
+&lt;p&gt;在这里，就是我所说的引导，即为：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一个 引导 是指让玩家了解 游戏机制 的 事件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;而下面，无不体现着任天堂的引导：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE101-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;河道上会飞的金币&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE101-1-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;会追着玩家的板栗仔（Goomba）&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE146-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;旗杆的金币&lt;/p&gt;
+&lt;h2 id=&#34;让引导循序渐进&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#让引导循序渐进&#34;&gt;#&lt;/a&gt; 让引导循序渐进&lt;/h2&gt;
+&lt;p&gt;注意，这样的引导并不是一下子全部给你，有些还是要靠你发现的。&lt;/p&gt;
+&lt;p&gt;比如下面这个场景：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE133-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;图片的左下角有个用尾巴击打会蹦出金币的砖块，这是在引导你，说如果用尾巴连续击打一些特殊砖块，会有奖励。而在接下来，就立马出现了个砖块，这时候你被引导去击打这方块。&lt;/p&gt;
+&lt;p&gt;在这时候，出现了意想不到的事情，一个轮盘！击打它还会上升。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE134-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而这样的情况，不属于游戏设计者主动要求你的，是你自己探索出来的，我把它称之为：认知（Cognition），在引导之上，你自己探索出来的新东西。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一个 认知 是 玩家 在 经过引导 之后 自我探索 出来的 事件&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;建立在认知之上的突破&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#建立在认知之上的突破&#34;&gt;#&lt;/a&gt; 建立在认知之上的突破&lt;/h2&gt;
+&lt;p&gt;这里，我们把视角转换下，从一个开发者的角度转为一个玩家的角度：我了解了一系列操作，我也知道了一些技巧。这时候，我需要有些挑战性的来试一下。所以，任天堂设计的突破，也就出现了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一个 突破 是 建立在玩家 认知 之上 的 有挑战性 的 事件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;而任天堂设计的，是一个环环相扣的关卡。&lt;/p&gt;
+&lt;p&gt;这里拿第一关的过程来说明：&lt;/p&gt;
+&lt;p&gt;玩家会在游戏过程中遇到一个结合的敌人，可以使用跳踩或者甩尾来击败敌人&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/42943516504719892-1024x576.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里玩家碰到新的板栗仔，并没有什么难度&lt;/p&gt;
+&lt;p&gt;而在之后的关卡中，玩家会遇到更大的板栗仔，而且还碰到不要掉出去和碰到敌人的尾巴这样的挑战。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/32258416504720762-1024x576.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;此时的玩家的心理将是个相对紧张的状态，但是由于有前面的认知，玩家会试着跳下去，踩死那只大板栗仔，这样完成一个 “突破”。而在这期间玩家心理有个舒缓到紧张，再到舒缓的过程，就有了游戏的节奏。&lt;/p&gt;
+&lt;h2 id=&#34;节奏的安排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#节奏的安排&#34;&gt;#&lt;/a&gt; 节奏的安排&lt;/h2&gt;
+&lt;p&gt;游戏节奏的设计更像是写文章，所谓 “文似看山不喜平” 这样的道理也可以体现在游戏上。&lt;/p&gt;
+&lt;p&gt;这里用世界 1 的 BOSS 战来解释节奏：&lt;/p&gt;
+&lt;h3 id=&#34;关卡前期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡前期&#34;&gt;#&lt;/a&gt; 关卡前期&lt;/h3&gt;
+&lt;h4 id=&#34;关卡前期-1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡前期-1&#34;&gt;#&lt;/a&gt; 关卡前期 - 1&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS1-1024x632.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;关卡前期 - 1 相对平缓&lt;/p&gt;
+&lt;p&gt;关卡开始，主要的任务是给玩家些许紧张感，这里相对于前面关卡开场的风平浪静，加入了一个会攻击的敌人，塑造 BOSS 战的紧张感，同时，地图也在引导玩家前进。这样的关卡玩家在前面已经遇到，所以这里节奏是比较平缓的。&lt;/p&gt;
+&lt;h4 id=&#34;关卡前期-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡前期-2&#34;&gt;#&lt;/a&gt; 关卡前期 - 2&lt;/h4&gt;
+&lt;p&gt;这里出现了新的设计来激发玩家兴趣，这里由于齿轮的滚动，导致玩家会对位置判断失误，在这里开始，节奏开始加快，同时这里玩家也认识到了齿轮这一个全新的设计。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS2-1024x618.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;关卡前期 - 2 节奏加快&lt;/p&gt;
+&lt;h4 id=&#34;关卡前期-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡前期-3&#34;&gt;#&lt;/a&gt; 关卡前期 - 3&lt;/h4&gt;
+&lt;p&gt;经历过刚才节奏的变快，任天堂并没有一直增加难度，而是设计了个有些难度的平缓段，所谓的难度就是会复活的敌人给玩家的威胁，这里的难度是在 前期 - 1 的之上的，整体节奏在向上走。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS3-1024x618.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;关卡前期 - 3&lt;/p&gt;
+&lt;h3 id=&#34;关卡中期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡中期&#34;&gt;#&lt;/a&gt; 关卡中期&lt;/h3&gt;
+&lt;h4 id=&#34;关卡中期-1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡中期-1&#34;&gt;#&lt;/a&gt; 关卡中期 - 1&lt;/h4&gt;
+&lt;p&gt;跳上一个上下移动的平台，进入到了关卡中期。这里基本是复刻前面的节奏，不过多赘述。一个略有挑战的平缓段来当个引子。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS5-1024x617.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关卡中期-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡中期-2&#34;&gt;#&lt;/a&gt; 关卡中期 - 2&lt;/h4&gt;
+&lt;p&gt;这出现了新敌人，会向玩家扔东西，这里玩家会本能的躲避，并且利用前面关卡中学到的利用踩或者能力来打败敌人，同时也认识到了新的敌人类型，重新激发了新鲜感。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS6-1024x617.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关卡中期-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡中期-3&#34;&gt;#&lt;/a&gt; 关卡中期 - 3&lt;/h4&gt;
+&lt;p&gt;这里进入了个平缓段，和前期节奏基本一致。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS7-1-1024x617.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;关卡后期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡后期&#34;&gt;#&lt;/a&gt; 关卡后期&lt;/h3&gt;
+&lt;h4 id=&#34;关卡后期-1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡后期-1&#34;&gt;#&lt;/a&gt; 关卡后期 - 1&lt;/h4&gt;
+&lt;p&gt;这里任天堂设计了金币这样的奖励来鼓励玩家向上探索。，同时也利用地图来引导玩家了解新的敌人。这里因为石板怪给人强烈的压迫感，节奏加快，紧张感也上升到了新的高度。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS8-1-1024x612.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;后面就出现了代表成就的星星徽章。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS81-1024x617.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关卡后期-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡后期-2&#34;&gt;#&lt;/a&gt; 关卡后期 - 2&lt;/h4&gt;
+&lt;p&gt;这里任天堂在此设计了一个非常简单的过渡（只有一只不死乌龟），来用后面更大的节奏跳跃来凸显 BOSS 战的紧张。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS9-1-1024x619.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关卡后期-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡后期-3&#34;&gt;#&lt;/a&gt; 关卡后期 - 3&lt;/h4&gt;
+&lt;p&gt;这里 boss 出现，节奏迅速加快。这里也分为三个阶段来提升玩家的紧张感的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关卡后期 - 3.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由于 BOSS 是吐火球攻击的，所以玩家距离越远，玩家就有更多的反应时间，紧张感就越小。&lt;/p&gt;
+&lt;p&gt;此时 boss 里玩家较远，紧张感不是很强。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS10-1024x613.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关卡后期 - 3.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里 BOSS 里玩家的距离开始缩短，玩家的紧张感上升.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS102-1024x614.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关卡后期 - 3.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里玩家离 BOSS 距离最近，紧张感最强，节奏发展称为整个关卡最快阶段，玩家的紧张感在此时也达到顶峰。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS11-1024x618.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;关卡末尾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关卡末尾&#34;&gt;#&lt;/a&gt; 关卡末尾&lt;/h3&gt;
+&lt;p&gt;在此时，作为一个玩家此时是充满成就感的，为了迎合或者说配合这样的成就感，特意设计的最简单的方式：只有跳跃的关卡，同时结束的地方设计的也非常像个领奖台。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_BOSS12-1024x617.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;回看&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#回看&#34;&gt;#&lt;/a&gt; 回看&lt;/h3&gt;
+&lt;p&gt;整个分析结束，我们来整体看一下整个游戏的节奏&lt;/p&gt;
+&lt;p&gt;最开始的相对平缓，接着紧张，之后平缓紧张，到最后，接着突然上升到顶点之后骤然放慢。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/Mario_JIEXZOU-1024x294.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;整个过程，开始的平缓引导，到后面需要寻找时机的 “认知” 关卡，再到最后充满挑战型的 “突破” 设计，整体如同山峦一般的引人入胜的难度曲线，真是佩服任天堂的关卡设计之出色。&lt;/p&gt;
+&lt;h2 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h2&gt;
+&lt;p&gt;用引导来合理的让游戏者熟悉玩法来转化玩家，利用合理设计培养玩家认知来提升综合体验，用充满挑战性的突破来满足核心玩家的需求，这样的 GCB 方法是我从《马里奥 3D 大陆》这款游戏中学到的。&lt;/p&gt;
+&lt;h2 id=&#34;修改记录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改记录&#34;&gt;#&lt;/a&gt; 修改记录&lt;/h2&gt;
+&lt;h3 id=&#34;202248&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#202248&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2022.4.8&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;将原文中 &amp;quot;引导 (Guide)－－－&amp;gt; 认识 (Know)－－&amp;gt; 突破 (Breakthrough)&amp;quot; 中的 &amp;quot;认识 (Know)“改为&amp;quot; 认知 (Cognition)” ，“认识” 一词的意思为：&lt;strong&gt;指人的头脑对客观世界的反映&lt;/strong&gt; ，这个和我本来想表达的那种探索的心理活动不同，所以改为了有心理活动的认知 (Cognition) 一词。同时也集合了我之前了解到的 “心流”(flow) 的概念。游戏这样有着互动属性的一种娱乐形式，这样一种先天的具有了挑战和回馈的娱乐形式，是很容易进入到 “心流” 中去的。&lt;/p&gt;
+&lt;h3 id=&#34;2022420&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2022420&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2022.4.20&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;更新完最后的 “突破” 部分，鸽了好久，咕咕咕。。。&lt;/p&gt;
+&lt;h3 id=&#34;2022421&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2022421&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2022.4.21&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;重写 “突破” 部分&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;原突破部分&lt;/p&gt;
+&lt;p&gt;(1) 将 “这里，我们把视角转换下，从一个开发者的角度转为一个玩家的角度：我知道了一系列操作，我也知道了一些进阶技巧。这时候，光有这些简单的挑战是完全没意思的，我需要更有些挑战性的来试一下。所以，任天堂设计的突破，也就诞生了。” 修改为 “这里，我们把视角转换下，从一个开发者的角度转为一个玩家的角度：我了解了一系列操作，我也知道了一些技巧。这时候，我需要有些挑战性的来试一下。所以，任天堂设计的突破，也就出现了。”&lt;/p&gt;
+&lt;p&gt;(2) 将 “突破” 部分的提示&lt;/p&gt;
+&lt;p&gt;注意：这里的挑战不止是那种考验操作的挑战，还包括探索的挑战&lt;/p&gt;
+&lt;p&gt;删除。&lt;/p&gt;
+&lt;p&gt;(3) 删除原来 “突破” 里 “探索的挑战” 和 “操作的挑战” 所有内容&lt;/p&gt;
+&lt;p&gt;以下为原内容：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;探索的挑战&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE121-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里，玩家右边的树可以爬上去，爬上去会得到一个变身狸猫状态的奖励，这里玩家建立了一个认识：树是可以爬上去的。而挑战在哪里呢，在于让玩家探索的挑战。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE125-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里玩家爬上树探索会发现有这样的方块&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE127-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通过方块跳上台子会发现水管&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE130-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里的银色物品是星星徽章，就是给玩家的突破奖励了&lt;/p&gt;
+&lt;p&gt;这时候，玩家会产生另一个成就感：就是挑战的成就感。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作的挑战&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里拿世界一第二关的地牢场景来说明&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE195-1024x576.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;玩家需要得到星星徽章，必须注意移动的平台和吐遮挡视线的墨水。这里就构成了操作的挑战，也构成了一个突破。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重写 “节奏的安排” 部分&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;原内容如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;节奏的安排&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indienova 的这篇文章已经说过足够详尽，这里就不过多赘述了。&lt;/p&gt;
+&lt;p&gt;文章链接： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbmRpZW5vdmEuY29tL2luZGllLWdhbWUtZGV2ZWxvcG1lbnQvaG93LXRvLWRlc2lnbi1sZXZlbHMtd2l0aC10aGUtc3VwZXItbWFyaW8td29ybGQtbWV0aG9kLWluLWNoaW5lc2Uv&#34;&gt;使用 “马里奥方法” 设计游戏关卡 indienova 独立游戏&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2022422&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2022422&#34;&gt;#&lt;/a&gt; 2022.4.22&lt;/h3&gt;
+&lt;p&gt;完成最后 “节奏的安排” 部分&lt;/p&gt;
+&lt;h3 id=&#34;202255&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#202255&#34;&gt;#&lt;/a&gt; 2022.5.5&lt;/h3&gt;
+&lt;p&gt;1. 修正一些错字，认知部分 “就立马出现了给砖块，” 更正为 “就立马出现了个砖块”，&lt;/p&gt;
+&lt;p&gt;突破部分 “这样完成一个突破‘’。” 更正为 “这样完成一个 “突破”。&lt;/p&gt;
+&lt;p&gt;2. 将一些概念进行特殊化处理，这样更加适合阅读了&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://xenolies.github.io/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/</guid>
+            <title>我的一些关卡设计心得</title>
+            <link>http://xenolies.github.io/2022/03/15/%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%BF%83%E5%BE%97/</link>
+            <category>心得体会</category>
+            <category>游戏设计</category>
+            <category>杂项</category>
+            <pubDate>Tue, 15 Mar 2022 07:20:46 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;这篇文章并不是专业的，只是我自己总结体会，有错误之处，欢迎评论区指出，感激不尽。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何让玩家知道游戏的基本机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何让玩家知道游戏的基本机制&#34;&gt;#&lt;/a&gt; 如何让玩家知道游戏的基本机制&lt;/h3&gt;
+&lt;p&gt;优秀的设计往往第一时间让玩家知道游戏的玩法，如果玩家长时间不知道玩法，就会导致失去兴趣。&lt;/p&gt;
+&lt;p&gt;拿小岛秀夫的合金装备为例，主要玩法是潜行等多样的玩法，如何体现这个玩法呢？&lt;/p&gt;
+&lt;p&gt;其实在序章给出了答案：在序章的中间部分，会出现一个完全交给玩家的逃离任务，有两个路线可走（此时玩家手上有枪支），一为直接走下走廊，被敌人发现，然后玩家反击，跑向门口的 “突突突” 玩法，这里成为 “突击流”; 另一个是转头会找到一个被坍塌的楼梯组成的矮墙，同时末端有个洞，提示玩家趴下，然后慢慢爬到门口，这里成为 “潜入流”。这两个设计直接体现了玩法，让玩家对游戏有了大概的认知。这样玩家在游玩的时候，就不会感觉难度跨越太大。&lt;/p&gt;
+&lt;p&gt;因此，让玩家第一时间知道游戏的基本机制，才是最重要的一点。&lt;/p&gt;
+&lt;p&gt;那么转到游戏，将要如何设计呢。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%B8%80%E5%85%B3-1024x612.webp&#34; alt=&#34;第一关&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第一关&lt;/p&gt;
+&lt;p&gt;拿我设计的第一关为例，乍一看，感觉无非是墙，灯和地面，但是我们把它的主体提出来看看。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%B8%80%E5%85%B3-%E8%AE%BE%E8%AE%A1-1024x612.webp&#34; alt=&#34;第一关设计&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第一关设计&lt;/p&gt;
+&lt;p&gt;我设计的也是一款潜入游戏，那么如何让玩家了解到游戏的机制呢？&lt;/p&gt;
+&lt;p&gt;玩家向左走不通，会向右走，碰到了障碍，这时候，玩家就会通过跳跃来越过障碍，这样玩家就学会了最基础的操作：移动，跳跃。&lt;/p&gt;
+&lt;p&gt;那么如何让引入游戏机制呢？这时侯，玩家就会发现一个敌人，敌人在不断巡逻。这时候玩家在想，这个既然是敌人，我们就要杀死他。&lt;/p&gt;
+&lt;p&gt;在这样的心理下，玩家就会思索，如何杀掉敌人，这里我引入了射击。这样玩家就会冲过去杀掉敌人。这时候，潜入的机制就开始发挥作用了。&lt;/p&gt;
+&lt;p&gt;敌人会给玩家造成大量的伤害，这样玩家意识到，正面进攻（“突击流”）是极为困难的。这时，玩家就会思考其他的过关方法，头顶的平台就起了作用。这时候玩家就会意识到，自己要跳上平台来躲避敌人的视线，这样，玩家就了解了游戏的机制以及操作的方法。&lt;/p&gt;
+&lt;h3 id=&#34;让玩家了解新机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#让玩家了解新机制&#34;&gt;#&lt;/a&gt; 让玩家了解新机制&lt;/h3&gt;
+&lt;p&gt;一个游戏如果自始至终都是单一机制会非常无聊，所以就要引入新机制来丰富游戏内容。&lt;/p&gt;
+&lt;p&gt;这里我们以 3ds 上的 “马里奥 3d 大陆” 为例，如何引入新机制。&lt;/p&gt;
+&lt;p&gt;马里奥中有个形态是 “狸猫 “，此时的马里奥会得到一个杀死一定范围内的敌人的效果，而在此游戏里，有一个一样的敌人，也是有一样的能力。玩家碰到这样的怪物就会死亡，这是非常有特点的从敌人上了解游戏机制的设计。&lt;/p&gt;
+&lt;p&gt;放到游戏里面，可以这样来设计。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%BA%8C%E5%85%B3%E8%AE%BE%E8%AE%A1-1024x613.webp&#34; alt=&#34;第二关设计1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第二关设计 1&lt;/p&gt;
+&lt;p&gt;这里的横杆是可以跳跃上去的，那么如何让玩家了解这个新机制呢？&lt;/p&gt;
+&lt;p&gt;在这里，我设计了个 boss，可以发射上中下三个方向子弹来攻击。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%BA%8C%E5%85%B3%E8%AE%BE%E8%AE%A12-1024x613.webp&#34; alt=&#34;第二关设计2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第二关设计 2&lt;/p&gt;
+&lt;p&gt;玩家此时要躲避，就需要跳跃。这时候就会发现自己跳到了横杆上，并且借助横杆，可以跳的更高来更好的躲避 boss 攻击。通过这样的设计，玩家就了解到了新机制。&lt;/p&gt;
+&lt;h3 id=&#34;让玩家运用新机制以及心里反馈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#让玩家运用新机制以及心里反馈&#34;&gt;#&lt;/a&gt; 让玩家运用新机制以及心里反馈&lt;/h3&gt;
+&lt;p&gt;对于游戏来说，良好的难度曲线是并不可少的，因此难度曲线在玩家心里的反馈，就成了重中之重。&lt;/p&gt;
+&lt;p&gt;前面两个关卡，第一关用于熟悉操作以及游戏机制，第二关用于了解新机制，第三关当然理所当然的是前面结合的关卡。&lt;/p&gt;
+&lt;p&gt;由于当时时间，人力等等限制，就把这段设计做到了最后 boss 战环节，也就是第三关。同时也为 体现进入神秘组织内部的感觉，跟换了背景以及整体色调，暗调配合黑色背景给人一种神秘感。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%B8%89%E5%85%B3-1024x616.webp&#34; alt=&#34;第三关&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第三关&lt;/p&gt;
+&lt;p&gt;为了激发玩家的兴奋点，我设计了 boss 发射导弹的动作，导弹对玩家是一击必杀的，但是玩家可以跳上导弹来接着攻击 boss。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://image.xenolies.xyz/2022/03/%E7%AC%AC%E4%B8%89%E5%85%B3%E8%AE%BE%E8%AE%A1-1024x616.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第三关设计&lt;/p&gt;
+&lt;p&gt;这个设计迫使玩家去练习，去熟悉 boss 的攻击节奏。同时死亡在给玩家挫败感的同时，也在激发玩家的兴奋，这样游戏的乐趣会更多，难度曲线才有了一些。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这就是我的一些游戏设计心得，本人并非专业人士，理解和思考不是很深刻，欢迎评论区指正并相互学习。&lt;/strong&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
