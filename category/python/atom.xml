@@ -18,6 +18,7 @@
     <category term="心得体会" />
     <category term="游戏设计" />
     <category term="杂项" />
+    <category term="Go" />
     <entry>
         <id>http://xenolies.github.io/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</id>
         <title>Pyinstaller的简单安装使用</title>
