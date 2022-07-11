@@ -5,9 +5,9 @@
     "home_page_url": "http://xenolies.github.io",
     "items": [
         {
-            "id": "http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/",
-            "url": "http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/",
-            "title": "MySQL学习笔记(4)（更新中）",
+            "id": "http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/",
+            "url": "http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/",
+            "title": "MySQL学习笔记(4)",
             "date_published": "2022-05-05T02:55:19.000Z",
             "content_html": "<h2 id=\"为表添加数据\"><a class=\"markdownIt-Anchor\" href=\"#为表添加数据\">#</a> 为表添加数据</h2>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">//</span><br><span class=\"line\">insert into s1(Name,ID) selest(Name,ID)from student；</span><br></pre></td></tr></table></figure>",
             "tags": [

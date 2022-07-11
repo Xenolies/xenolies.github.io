@@ -105,8 +105,7 @@
 &lt;p&gt;复位信号&lt;/p&gt;
 &lt;p&gt;A0(DC)&lt;/p&gt;
 &lt;p&gt;D25&lt;/p&gt;
-&lt;p&gt;寄存器 /&lt;br&gt;
- 数据选择信号&lt;/p&gt;
+&lt;p&gt;寄存器 / 数据选择信号&lt;/p&gt;
 &lt;p&gt;SDA&lt;/p&gt;
 &lt;p&gt;D23&lt;/p&gt;
 &lt;p&gt;SPI 总线写数据信号&lt;/p&gt;

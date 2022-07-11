@@ -20,9 +20,9 @@
     <category term="杂项" />
     <category term="Go" />
     <entry>
-        <id>http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/</id>
-        <title>MySQL学习笔记(4)（更新中）</title>
-        <link rel="alternate" href="http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"/>
+        <id>http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</id>
+        <title>MySQL学习笔记(4)</title>
+        <link rel="alternate" href="http://xenolies.github.io/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/"/>
         <content type="html">&lt;h2 id=&#34;为表添加数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为表添加数据&#34;&gt;#&lt;/a&gt; 为表添加数据&lt;/h2&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;insert into s1(Name,ID) selest(Name,ID)from student；&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="笔记" />

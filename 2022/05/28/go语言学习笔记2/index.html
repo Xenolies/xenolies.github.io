@@ -1,0 +1,643 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://xenolies.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xenolies.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://xenolies.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,编程,Go" />
+
+
+<link rel="canonical" href="http://xenolies.github.io/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+
+
+  <title>
+Go语言学习笔记(2) - 笔记 |
+Xenolies Hexo Blog = </title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Go语言学习笔记(2)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2022-05-28 22:59:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-05-28T22:59:36+08:00">2022-05-28</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Xenolies Hexo Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="In 笔记"><span itemprop="name">笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://xenolies.github.io/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.webp">
+    <meta itemprop="name" content="Xenolies">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>数据类型，变量和常量，IOTA</p>
+<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> 数据类型</h2>
+<h3 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型">#</a> 布尔类型</h3>
+<p>值只有 ture 和 false ，声明方式  <code>var B bool</code>  ，默认值为  <code>false</code></p>
+<p>和 JAVA 不同的是，JAVA 使用 Boolean 关键字来表示布尔值 ，Go 语言用 bool 来表示，注意区分</p>
+<h3 id="数字类型"><a class="markdownIt-Anchor" href="#数字类型">#</a> 数字类型</h3>
+<h4 id="整数类型"><a class="markdownIt-Anchor" href="#整数类型">#</a> 整数类型</h4>
+<ul>
+<li>整数</li>
+</ul>
+<p><code>int</code>  类型，有正负之分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int8   //有符号 8 位整型,取值 -128 到 127</span><br><span class="line">int16 //有符号 16 位整型,取值 -32768 到 32767</span><br><span class="line">int32 //有符号 32 位整型,取值 -2147483648 到 2147483647</span><br><span class="line">int64 //有符号 64 位整型,取值 -9223372036854775808 到 9223372036854775807</span><br></pre></td></tr></table></figure>
+<ul>
+<li>无符号整数</li>
+</ul>
+<p><code>int</code>  前面加个 <code>u</code>  (unsigned) , 变成无符号整数  <code>uint</code>  (unsigned integer), 无符号整数一定是正整数。</p>
+<p>和有符号整数一样，也是有各种位数的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">uint8   //无符号 8 位整型,取值 0 到 255</span><br><span class="line">uint16 //无符号 16 位整型,取值 0 到 65535</span><br><span class="line">uint32 //无符号 32 位整型,取值 0 到 4294967295</span><br><span class="line">uint64 //无符号 64 位整型,取值 0 到 18446744073709551615</span><br></pre></td></tr></table></figure>
+<h4 id="浮点型"><a class="markdownIt-Anchor" href="#浮点型">#</a> 浮点型</h4>
+<p><code>float32</code>  和  <code>float64</code>  <span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNDMwMzM2NjE=">IEEE754 标准</span></p>
+<p>Go 语言的浮点型没有 <code>float</code>  , 有  <code>float32</code>  和  <code>float64</code>  ，无  <code>double</code>  类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">float32  //32位浮点型数</span><br><span class="line">float64 //64位浮点型数</span><br></pre></td></tr></table></figure>
+<h3 id="字符串类型"><a class="markdownIt-Anchor" href="#字符串类型">#</a> 字符串类型</h3>
+<p><code>string</code>  , 一串固定长度的字符连接起来的字符序列。</p>
+<p>使用双引号  <code>&quot; &quot;</code> ，或者反引号 <code>` `</code>  来创建。</p>
+<p>在 JAVA 中 ，字符串类型是 String 第一个字母是大写，Go 语言中，第一个字母小写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">var A string = &quot;A&quot; //定义字符串</span><br><span class="line">var B string = `B`</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;var A = &quot; , A )  //输出</span><br><span class="line">fmt.Println(`var B = ` , B )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果 ：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/gostring1-1.png" alt=""></p>
+<p>合并字符串</p>
+<p>使用加号来合并字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">var A string = &quot;A&quot;</span><br><span class="line">var B string = `B`</span><br><span class="line">var str string = A + B</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;var A = &quot; , A )</span><br><span class="line">fmt.Println(`var B = ` , B )</span><br><span class="line">fmt.Println(&quot;var str1 = &quot; , str )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/gostring2-1.png" alt=""></p>
+<p>fmt 包中的 Sprintf 来合并字符串</p>
+<p>格式 :  <code>fmt.Sprintf(格式化样式, 参数列表)</code></p>
+<ul>
+<li>** 格式化样式：** 字符串形式，格式化符号以 % 开头， % s 字符串格式，% d 十进制的整数格式。</li>
+<li>** 参数列表：** 多个参数以逗号分隔，个数必须与格式化样式中的个数一一对应，否则运行时会报错。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">var A = &quot;123&quot;</span><br><span class="line">var B = &quot;123&quot;</span><br><span class="line"></span><br><span class="line">        //fmt包中的Sprint方法格式化输出</span><br><span class="line">var str = fmt.Sprintf(&quot;A = %s , B = %s&quot;,A , B)  </span><br><span class="line"></span><br><span class="line">fmt.Println( &quot;var str :&quot; ,str )</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/gostring3.png" alt=""></p>
+<h3 id="派生类型"><a class="markdownIt-Anchor" href="#派生类型">#</a> 派生类型</h3>
+<ul>
+<li>指针类型（Pointer）</li>
+<li>数组类型</li>
+<li>结构化类型 (struct)</li>
+<li>Channel 类型</li>
+<li>函数类型 (fanc)</li>
+<li>切片类型</li>
+<li>接口类型（interface）</li>
+<li>Map 类型</li>
+</ul>
+<h3 id="注意"><a class="markdownIt-Anchor" href="#注意">#</a> 注意</h3>
+<p>Go 语言中在不同数据类型之间赋值时需要显式的转换，不像其他如 php,java 可自动转换。</p>
+<p>比如下面这个例子:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/06/GoType.png" alt=""></p>
+<p>会出现类型不匹配的报错。</p>
+<p>需要强制转换一下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">var A int8 = 10</span><br><span class="line"></span><br><span class="line">var B float32 = 0.5</span><br><span class="line"></span><br><span class="line">var C = float32(A) + B  //将 int强制转换为 float32</span><br><span class="line"></span><br><span class="line">fmt.Println(C)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/06/Gotype1.png" alt=""></p>
+<p>而在 JAVA 中不会出现这个问题。</p>
+<p><img data-src="https://image.xenolies.xyz/2022/06/JavaType.png" alt=""></p>
+<h2 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h2>
+<h3 id="声明变量"><a class="markdownIt-Anchor" href="#声明变量">#</a> 声明变量</h3>
+<p>在 Go 语言中，使用 <code>var</code>  关键字声明变量，且变量一旦声明，<strong>必须使用</strong>。</p>
+<p>这里和 JAVA 中不同，需要注意。</p>
+<p>声明格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Name Type //声明变量的格式</span><br></pre></td></tr></table></figure>
+<p><code>var</code>  ： 变量声明关键字</p>
+<p><code>Name</code>  : 变量名字</p>
+<p><code>Type</code>  : 变量类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//声明变量</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">var A string = &quot;Hello,Go&quot; //声明名为 A 的整数变量</span><br><span class="line"></span><br><span class="line">fmt.Println(A)  //输出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/var1.png" alt=""></p>
+<h3 id="批量声明变量"><a class="markdownIt-Anchor" href="#批量声明变量">#</a> 批量声明变量</h3>
+<p>在 Go 中，可以使用  <code>var</code>  +  <code>()</code>  来实现批量声明变量的操作。</p>
+<p>声明格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//批量声明变量</span><br><span class="line">var (</span><br><span class="line">Name string </span><br><span class="line">Sex string </span><br><span class="line">Age int </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="类型推断"><a class="markdownIt-Anchor" href="#类型推断">#</a> 类型推断</h3>
+<p>在 Go 中有一种很方便的声明变量或者常量的方式，就是类型推断</p>
+<p>声明格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Name = value</span><br></pre></td></tr></table></figure>
+<p><code>var</code>  : 变量声明关键字</p>
+<p><code>Name</code>  : 变量名</p>
+<p><code>value</code>  : 初始化值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//类型推断</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">var Name = &quot;たかみ ちか&quot;  </span><br><span class="line"></span><br><span class="line">fmt.Println(Name)  //输出</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/var2-2.png" alt=""></p>
+<h3 id="变量的初始化"><a class="markdownIt-Anchor" href="#变量的初始化">#</a> 变量的初始化</h3>
+<p>Go 语言中声明变量，会自动进行初始化操作，并且赋默认值。</p>
+<p><code>int</code>  类型默认值为 0, <code>string</code>  类型默认值为 &quot;&quot;， <code>bool</code>  类型默认值为 false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//变量初始化</span><br><span class="line">var (</span><br><span class="line">Name string  = &quot;Takami Chika&quot;</span><br><span class="line">Sex string = &quot;female&quot;</span><br><span class="line">Age int = 16</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="批量初始化"><a class="markdownIt-Anchor" href="#批量初始化">#</a> 批量初始化</h3>
+<p>一次性可以初始化多个变量，中间用逗号隔开变量和值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//批量初始化</span><br><span class="line">var A ,B , C = 1, 2, 3</span><br></pre></td></tr></table></figure>
+<h3 id="短变量声明"><a class="markdownIt-Anchor" href="#短变量声明">#</a> 短变量声明</h3>
+<p>在函数内部，可以使用短变量来更为快速地声明变量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//短变量声明</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">Name := &quot;短变量&quot;  //短变量声明</span><br><span class="line"></span><br><span class="line">fmt.Println(Name)  //输出</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>短变量只能在函数内部声明，无法在函数外部声明</p>
+<h3 id="匿名变量"><a class="markdownIt-Anchor" href="#匿名变量">#</a> 匿名变量</h3>
+<p>如果接收到多个变量，而有一些变量暂时使用不到，可以使用下划线  <code>_</code>  来声明匿名变量来代替变量名称。</p>
+<p>匿名变量声明后，传入的任何值将会被抛弃，且不能在后续的代码中使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var _ = &quot;&quot; </span><br><span class="line">var Name,_ = &quot;KSM&quot; , 123</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.xenolies.xyz/2022/05/var3.png" alt=""></p>
+<h2 id="常量"><a class="markdownIt-Anchor" href="#常量">#</a> 常量</h2>
+<p>在编译时就确定的值，运行后无法改变。</p>
+<h3 id="声明常量"><a class="markdownIt-Anchor" href="#声明常量">#</a> 声明常量</h3>
+<p>在 Go 语言中，使用  <code>const</code>  关键字来定义常量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const Name Type = value</span><br></pre></td></tr></table></figure>
+<p><code>const</code>  : 常量定义关键字</p>
+<p><code>Name</code>  : 常量名</p>
+<p><code>Type</code>  : 常量数据类型，因为有 类型推断，也可以不用写数据类型</p>
+<p><code>value</code>  ：常量值</p>
+<p>Go 中的常量，在定义时就必须要赋初值，且后续无法修改。（比 JAVA 方便了不少）</p>
+<p>JAVA 中的常量 :  <code>private static final int A = 100;</code> <br>
+Go 中的常量 :  <code>const A = 100</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//常量</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const Name string = &quot;CYaRon!&quot;</span><br><span class="line">fmt.Println(Name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/const1.png" alt=""></p>
+<p>当然，常量也是可以批量定义和初始化的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const Name string = &quot;CYaRon!&quot;</span><br><span class="line">fmt.Println(Name)</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">A = &quot;A&quot;</span><br><span class="line">B = 10</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">const C, D, E = 1,2,3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="iota"><a class="markdownIt-Anchor" href="#iota">#</a> IOTA</h2>
+<h3 id="关键字iota"><a class="markdownIt-Anchor" href="#关键字iota">#</a> 关键字 iota</h3>
+<p><code>iota</code>  可以理解为一个可以被编译器修改的变量，初始值为 0，调用一次增加 1，遇到下一个 <code>const</code>  关键字重置为 0。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">A = iota  //0</span><br><span class="line">B = iota  //类似 JAVA 中的 i++</span><br><span class="line">C = iota</span><br><span class="line">D = iota</span><br><span class="line">E = iota  //4</span><br><span class="line">)</span><br><span class="line">fmt.Println(&quot;const A = &quot; ,A)</span><br><span class="line">fmt.Println(&quot;const E =&quot;,E)</span><br><span class="line">const (  //iota被重置</span><br><span class="line">F = iota  //0</span><br><span class="line">G= iota  //1</span><br><span class="line">)</span><br><span class="line">fmt.Println(&quot;const F = &quot;,F)</span><br><span class="line">fmt.Println(&quot;const G = &quot;,G)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/iota1.png" alt=""></p>
+<h3 id="使用-_-下划线来跳过某些值"><a class="markdownIt-Anchor" href="#使用-_-下划线来跳过某些值">#</a> 使用  <code>_</code>  (下划线) 来跳过某些值</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">A = iota  //0</span><br><span class="line">B = iota //1</span><br><span class="line">_        //2</span><br><span class="line">D = iota //3</span><br><span class="line">E = iota //4</span><br><span class="line">)</span><br><span class="line">fmt.Println(&quot;const A = &quot; ,A)</span><br><span class="line">fmt.Println(&quot;const E =&quot;,E)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/iota2.png" alt=""></p>
+<h3 id="iota中间插队"><a class="markdownIt-Anchor" href="#iota中间插队">#</a> iota 中间插队</h3>
+<p>在 iota 中间，如果被别的常量打断，iota 会被覆盖掉，不再继续自增。但是用另一个 iota 接一下，又会继续自增。</p>
+<ul>
+<li>被打断有 iota 接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">A = iota  //0</span><br><span class="line">B = iota //1</span><br><span class="line">C = 100</span><br><span class="line">D = iota //3</span><br><span class="line">E = 100</span><br><span class="line">F = iota  //5</span><br><span class="line">G         //6</span><br><span class="line">)</span><br><span class="line">fmt.Println(&quot;const A = &quot; , A )</span><br><span class="line">fmt.Println(&quot;const D = &quot; , D )</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;const G = &quot; , G )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/iota3.png" alt=""></p>
+<ul>
+<li>被打断没有 iota 来接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">A = iota  //0</span><br><span class="line">B = iota //1</span><br><span class="line">C = 100</span><br><span class="line">D = iota //3</span><br><span class="line">E = 100</span><br><span class="line">F         //100</span><br><span class="line">G         //100</span><br><span class="line">)</span><br><span class="line">fmt.Println(&quot;const A = &quot; , A )</span><br><span class="line">fmt.Println(&quot;const D = &quot; , D )</span><br><span class="line">fmt.Println(&quot;const E = &quot; , E )</span><br><span class="line">fmt.Println(&quot;const G = &quot; , G )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<p><img data-src="https://image.xenolies.xyz/2022/05/iota4.png" alt=""></p>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 编程</a>
+          <a href="/tags/Go/" rel="tag"><i class="ic i-tag"></i> Go</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-07-11 18:01:50" itemprop="dateModified" datetime="2022-07-11T18:01:50+08:00">2022-07-11</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Xenolies WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Xenolies <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://xenolies.github.io/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="Go语言学习笔记(2)">http://xenolies.github.io/2022/05/28/go语言学习笔记2/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuv0socj20zk0m8qes.jpg" title="Go语言学习笔记(1)">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记</span>
+  <h3>Go语言学习笔记(1)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/05/29/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh5u05ej20zk0m87df.jpg" title="Go语言学习笔记(3)">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记</span>
+  <h3>Go语言学习笔记(3)</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 数字类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 整数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 浮点型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text"> 字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BE%E7%94%9F%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text"> 派生类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.5.</span> <span class="toc-text"> 注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text"> 声明变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text"> 批量声明变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD"><span class="toc-number">2.3.</span> <span class="toc-text"> 类型推断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.4.</span> <span class="toc-text"> 变量的初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text"> 批量初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%AD%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-number">2.6.</span> <span class="toc-text"> 短变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%8F%98%E9%87%8F"><span class="toc-number">2.7.</span> <span class="toc-text"> 匿名变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text"> 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text"> 声明常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iota"><span class="toc-number">4.</span> <span class="toc-text"> IOTA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97iota"><span class="toc-number">4.1.</span> <span class="toc-text"> 关键字 iota</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-_-%E4%B8%8B%E5%88%92%E7%BA%BF%E6%9D%A5%E8%B7%B3%E8%BF%87%E6%9F%90%E4%BA%9B%E5%80%BC"><span class="toc-number">4.2.</span> <span class="toc-text"> 使用  _  (下划线) 来跳过某些值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iota%E4%B8%AD%E9%97%B4%E6%8F%92%E9%98%9F"><span class="toc-number">4.3.</span> <span class="toc-text"> iota 中间插队</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="bookmark" title="ESP32制作小电视学习笔记">ESP32制作小电视学习笔记</a></li><li><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></li><li><a href="/2022/03/06/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="MySQL学习笔记(1)">MySQL学习笔记(1)</a></li><li><a href="/2022/03/10/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="MySQL学习笔记(2)">MySQL学习笔记(2)</a></li><li><a href="/2022/03/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="JAVA学习笔记(2)">JAVA学习笔记(2)</a></li><li><a href="/2022/03/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" rel="bookmark" title="JAVA学习笔记(3)">JAVA学习笔记(3)</a></li><li><a href="/2022/03/20/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="JAVA学习笔记(4)">JAVA学习笔记(4)</a></li><li><a href="/2022/03/21/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="JAVA学习笔记(5)">JAVA学习笔记(5)</a></li><li><a href="/2022/03/23/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886/" rel="bookmark" title="JAVA 学习笔记(6)">JAVA 学习笔记(6)</a></li><li><a href="/2022/03/25/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="JAVA学习笔记7">JAVA学习笔记7</a></li><li><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" rel="bookmark" title="JAVA学习笔记(8)">JAVA学习笔记(8)</a></li><li><a href="/2022/04/07/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="MySQL学习笔记(3)">MySQL学习笔记(3)</a></li><li><a href="/2022/04/23/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="bookmark" title="JAVA学习笔记(9)">JAVA学习笔记(9)</a></li><li><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/" rel="bookmark" title="MySQL学习笔记(4)">MySQL学习笔记(4)</a></li><li><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" rel="bookmark" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></li><li><a href="/2022/05/14/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="bookmark" title="JAVA学习笔记(11)">JAVA学习笔记(11)</a></li><li><a href="/2022/05/27/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/" rel="bookmark" title="JAVA学习笔记(12)">JAVA学习笔记(12)</a></li><li><a href="/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="Go语言学习笔记(1)">Go语言学习笔记(1)</a></li><li class="active"><a href="/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" rel="bookmark" title="Go语言学习笔记(2)">Go语言学习笔记(2)</a></li><li><a href="/2022/05/29/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="bookmark" title="Go语言学习笔记(3)">Go语言学习笔记(3)</a></li><li><a href="/2022/05/31/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/" rel="bookmark" title="Go语言学习笔记(4)">Go语言学习笔记(4)</a></li><li><a href="/2022/06/05/%E6%B4%BE%E8%92%99bot%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="bookmark" title="派蒙Bot(PaimengBot)开发环境配置">派蒙Bot(PaimengBot)开发环境配置</a></li><li><a href="/2022/06/10/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="bookmark" title="Go语言学习笔记(5)">Go语言学习笔记(5)</a></li><li><a href="/2022/06/22/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/" rel="bookmark" title="Go语言学习笔记(6)">Go语言学习笔记(6)</a></li><li><a href="/2022/07/02/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" rel="bookmark" title="Go语言学习笔记(7)">Go语言学习笔记(7)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xenolies"
+      data-src="/images/avatar.webp">
+  <p class="name" itemprop="name">Xenolies</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">33</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">15</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hlbm9saWVz" title="https:&#x2F;&#x2F;github.com&#x2F;Xenolies"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ4ODY1NDUwOTY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;4886545096"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/05/29/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/03/04/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="JAVA学习笔记(1)">JAVA学习笔记(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/03/07/%E4%B8%96%E7%BA%AA%E8%8B%B1%E8%AF%ADcentury-english%E5%BF%85%E8%83%8C%E8%AF%8D%E8%AF%8D%E7%BB%84/" title="世纪英语(Century English)必背词&amp;词组(整理中)">世纪英语(Century English)必背词&词组(整理中)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/02/12/esp32%E5%88%B6%E4%BD%9C%E5%B0%8F%E7%94%B5%E8%A7%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ESP32制作小电视学习笔记">ESP32制作小电视学习笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/05/06/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/" title="JAVA学习笔记(10)">JAVA学习笔记(10)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%8A%80%E6%9C%AF/" title="In 技术">技术</a>
+</div>
+
+    <span><a href="/2022/02/06/sakurairo%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E9%A1%B5%E5%B0%BE%E6%98%BE%E7%A4%BA%E7%BD%91%E7%AB%99%E7%B4%AF%E8%AE%A1%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" title="Sakurairo主题设置页尾显示“网站累计运行时间”">Sakurairo主题设置页尾显示“网站累计运行时间”</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/05/05/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/" title="MySQL学习笔记(4)">MySQL学习笔记(4)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/07/02/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/" title="Go语言学习笔记(7)">Go语言学习笔记(7)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="In 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/02/09/pyinstaller%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" title="Pyinstaller的简单安装使用">Pyinstaller的简单安装使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/04/02/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/" title="JAVA学习笔记(8)">JAVA学习笔记(8)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="In 笔记">笔记</a>
+</div>
+
+    <span><a href="/2022/05/28/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="Go语言学习笔记(2)">Go语言学习笔记(2)</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xenolies @ Xenolies Hexo Blog</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/05/28/go语言学习笔记2/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
